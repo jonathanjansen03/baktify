@@ -5,7 +5,6 @@ hr {
 }
 
 #hero_text {
-    color: black;
     font-weight: 700;
     margin-top: 5rem;
 }
@@ -40,11 +39,6 @@ hr {
 
 .home-middle:nth-of-type(1) {
     flex-direction: row-reverse;
-}
-
-.hr-text h5,
-.home-middle h5 {
-    color: black;
 }
 
 .home-middle img {

@@ -8,10 +8,10 @@
   <div id="mainNavbar" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto mx-auto">
       <li class="nav-item">
-        <a class="nav-link" href="">About us</a>
+        <a class="nav-link text-black" href="">About us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">Products</a>
+        <a class="nav-link text-black" href="">Products</a>
       </li>
     </ul>
     <form class="form-inline">

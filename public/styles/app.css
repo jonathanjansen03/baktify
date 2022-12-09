@@ -49,13 +49,13 @@ footer p {
     margin-left: 5rem;
 }
 
+.text-black {
+    color: black !important;
+}
+
 .form-inline button,
 .nav-link {
     font-weight: 500;
-}
-
-.nav-link {
-    color: black !important;
 }
 
 .container-fluid {
