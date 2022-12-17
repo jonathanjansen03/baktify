@@ -15,6 +15,10 @@ footer {
     box-shadow: 0 0.2rem 1rem;
 }
 
+nav {
+    margin-bottom: 4rem;
+}
+
 footer {
     margin-top: 2rem;
 }
@@ -29,14 +33,7 @@ footer p {
 }
 
 #sign_up_btn {
-    background-color: var(--purple);
     border-radius: 2rem;
-    color: white;
-}
-
-#sign_up_btn:hover {
-    background-color: #4030ce;
-    transition-duration: 0.2s;
 }
 
 #sign_in_btn:hover,
@@ -61,4 +58,15 @@ footer p {
 .container-fluid {
     display: flex;
     flex-direction: column;
+}
+
+.purple-btn {
+    background-color: var(--purple);
+    color: white;
+}
+
+.purple-btn:hover {
+    background-color: #4030ce;
+    color: white;
+    transition-duration: 0.2s;
 }
