@@ -4,6 +4,10 @@ hr {
     margin: 5rem 2rem 1rem;
 }
 
+nav {
+    margin-bottom: 4rem;
+}
+
 #hero_text {
     font-weight: 700;
     margin-top: 5rem;
