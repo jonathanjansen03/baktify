@@ -2,7 +2,7 @@
 
 @section('title', 'About Us')
 @section('main-content')
-    <div id="about_us">
+    <div id="about_us_quote">
       <p class="text-center">
         "Baktify started from our love for music and album, we created Baktify to spread the love in out music community. We started off from a street near Rawa Belong street and now we have the most diverse collection of albums and musics. We won't stop until music spreads all over the world!"
       </p>
