@@ -1,0 +1,30 @@
+#sign_in_form {
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 1rem;
+    margin: 2rem 0 4rem;
+    padding: 2rem;
+    width: 35%;
+}
+
+#sign_in_form button {
+    margin: 1rem 0;
+    width: 100%;
+}
+
+#or_line {
+    border-bottom: 1px solid black;
+    line-height: 0;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+#or_line span {
+    background-color: white;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+#register_btn {
+    color: gray;
+    border: 1px solid gray;
+}
