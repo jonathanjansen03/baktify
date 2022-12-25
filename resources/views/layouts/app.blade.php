@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ asset('/styles/app.css') }}">
   <link rel="stylesheet" href="{{ asset('/styles/home.css') }}">
   <link rel="stylesheet" href="{{ asset('/styles/about-us.css') }}">
+  <link rel="stylesheet" href="{{ asset('/styles/sign-up.css') }}">
   <link rel="stylesheet" href="{{ asset('/styles/product-detail.css') }}">
 </head>
 <body>
