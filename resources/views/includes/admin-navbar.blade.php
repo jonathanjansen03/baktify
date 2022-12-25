@@ -1,4 +1,4 @@
-<nav id="guest_navbar" class="navbar navbar-expand-lg navbar-light">
+<nav id="admin_navbar" class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">
     <img src="{{ asset('images/logo.png') }}" alt="logo" id="logo">
   </a>
@@ -11,12 +11,17 @@
         <a class="nav-link text-black" href="">About us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-black" href="">Products</a>
+        <a class="nav-link text-black" href="">Manage Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-black" href="">Add Category</a>
       </li>
     </ul>
     <form class="form-inline">
-      <button id="sign_in_btn" class="btn">Sign in</button>
-      <button type="button" id="sign_up_btn" class="btn purple-btn" onclick="location.href='{{ route('signup') }}'">Sign Up</button>
+      <div id="navbar_profile">
+        <span>admin</span>
+        <a href="">View profile</a>
+      </div>
     </form>
   </div>
 </nav>

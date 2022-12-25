@@ -36,14 +36,34 @@ footer p {
     border-radius: 2rem;
 }
 
+#sign_in_btn {
+    padding-left: 0;
+}
+
 #sign_in_btn:hover,
-.nav-link:hover {
+.nav-link:hover,
+.form-inline a:hover {
     color: var(--purple) !important;
     transition-duration: 0.2s;
 }
 
-#mainNavbar {
+#guest_navbar #mainNavbar,
+#member_navbar #mainNavbar {
     margin-left: 5rem;
+}
+
+#admin_navbar #mainNavbar {
+    margin-left: 2rem;
+}
+
+#navbar_profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-inline a {
+    color: gray;
+    text-decoration: none;
 }
 
 .text-black {

@@ -1,4 +1,4 @@
-<nav id="guest_navbar" class="navbar navbar-expand-lg navbar-light">
+<nav id="member_navbar" class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">
     <img src="{{ asset('images/logo.png') }}" alt="logo" id="logo">
   </a>
@@ -13,10 +13,17 @@
       <li class="nav-item">
         <a class="nav-link text-black" href="">Products</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link text-black" href="">My Transaction</a>
+      </li>
     </ul>
     <form class="form-inline">
-      <button id="sign_in_btn" class="btn">Sign in</button>
-      <button type="button" id="sign_up_btn" class="btn purple-btn" onclick="location.href='{{ route('signup') }}'">Sign Up</button>
+      <a href="" class=" nav-link text-black">Cart</a>
+      <div id="navbar_profile">
+        {{-- ini nanti diganti jadi nama member --}}
+        <span>member</span>
+        <a href="">View profile</a>
+      </div>
     </form>
   </div>
 </nav>

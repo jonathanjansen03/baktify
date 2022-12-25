@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{{ asset('/styles/product-detail.css') }}">
 </head>
 <body>
+  {{-- ini cuma navbar nya doang yg diganti2, tergantung role web visitornya (guest/member/admin) --}}
   @include('includes.guest-navbar')
 
   <div class="container-fluid">
