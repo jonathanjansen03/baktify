@@ -12,3 +12,8 @@ Route::get('/about-us', function () {
 });
 
 Route::get('sign-up', [RegisterController::class, 'registerPage'])->name('signup');
+
+// ini nanti diganti ke /product/{id}
+Route::get('/product-detail', function () {
+    return view('pages.product-detail');
+});
