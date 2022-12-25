@@ -63,10 +63,11 @@ footer p {
 .purple-btn {
     background-color: var(--purple);
     color: white;
+    transition: 0.2s;
 }
 
 .purple-btn:hover {
-    background-color: #4030ce;
+    box-shadow: 0 0.3rem 0.5rem #afa7ff;
     color: white;
-    transition-duration: 0.2s;
+    transform: translateY(-0.1rem);
 }
