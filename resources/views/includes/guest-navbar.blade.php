@@ -16,7 +16,7 @@
     </ul>
     <form class="form-inline">
       <button id="sign_in_btn" class="btn">Sign in</button>
-      <button id="sign_up_btn" class="btn">Sign up</button>
+      <button id="sign_up_btn" class="btn purple-btn"> <a href="{{Route('signup')}}">Sign Up</a></button>
     </form>
   </div>
 </nav>
