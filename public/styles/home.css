@@ -11,7 +11,6 @@ hr {
 
 #songs_container {
     border-radius: 1rem;
-    box-shadow: 0 0.2rem 1rem;
     display: grid;
     grid-auto-columns: 10rem;
     grid-row-gap: 1rem;

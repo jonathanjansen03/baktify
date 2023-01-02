@@ -21,7 +21,7 @@
   <div class="container-fluid">
     @yield('main-content')
   </div>
-  <footer>
+  <footer class="grey-shadow">
     <p class="text-center"> &#169; 2021 Baktify, Inc. All rights reserved.</p>
   </footer>
 

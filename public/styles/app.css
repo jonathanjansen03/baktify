@@ -10,11 +10,6 @@
     scroll-behavior: smooth;
 }
 
-nav,
-footer {
-    box-shadow: 0 0.2rem 1rem;
-}
-
 nav {
     margin-bottom: 4rem;
 }
@@ -90,4 +85,8 @@ footer p {
     box-shadow: 0 0.3rem 0.5rem #afa7ff;
     color: white;
     transform: translateY(-0.1rem);
+}
+
+.grey-shadow {
+    box-shadow: 0 0.2rem 1rem #cdcdcd;
 }

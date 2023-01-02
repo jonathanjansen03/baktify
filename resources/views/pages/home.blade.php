@@ -8,7 +8,7 @@
       Music Collection
     </h1>
 
-    <div id="songs_container">
+    <div id="songs_container" class="grey-shadow">
       <a href="">
         <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nJTIwcG9ydHJhaXR8ZW58MHx8MHx8&w=1000&q=80" alt="">
       </a>
