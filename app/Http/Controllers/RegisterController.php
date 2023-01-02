@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    public function registerPage(){
+    public function index(){
         return view('pages.sign-up');
     }
 
@@ -25,7 +25,7 @@ class RegisterController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->name);
+        $user->password = bcrypt($request->password);
         $user->address = $request->address;
         $user->phone = $request->phone;
         $user->role = "member";

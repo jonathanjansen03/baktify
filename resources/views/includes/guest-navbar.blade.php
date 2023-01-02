@@ -15,7 +15,7 @@
       </li>
     </ul>
     <form class="form-inline">
-      <button id="sign_in_btn" class="btn">Sign in</button>
+      <button type="button" id="sign_in_btn" class="btn" onclick="location.href='{{ route('signin') }}'">Sign In</button>
       <button type="button" id="sign_up_btn" class="btn purple-btn" onclick="location.href='{{ route('signup') }}'">Sign Up</button>
     </form>
   </div>
