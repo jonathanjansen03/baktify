@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{ asset('/styles/sign-up.css') }}">
   <link rel="stylesheet" href="{{ asset('/styles/sign-in.css') }}">
   <link rel="stylesheet" href="{{ asset('/styles/product-detail.css') }}">
+  <link rel="stylesheet" href="{{ asset('/styles/product-list.css') }}">
 </head>
 <body>
   {{-- ini cuma navbar nya doang yg diganti2, tergantung role web visitornya (guest/member/admin) --}}
