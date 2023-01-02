@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,10 @@ class LoginController extends Controller
             'password' => $request->password
         ];
 
-        if(!Auth::Attempt($credentials, $request->rememberme)){
+        if($request->get('remember-email')){
+            Cookie::queue('emailcookie',$request->email, 2628000); // 5 years = 2628000 minutes
+        }
+        if(!Auth::Attempt($credentials)){
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records.'
             ]);

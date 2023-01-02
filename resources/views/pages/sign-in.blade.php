@@ -9,7 +9,7 @@
         @csrf
         <div class="form-group">
           <label for="login_email" class="text-black">Email address</label>
-          <input type="text" name="email" id="login_email" class="form-control">
+          <input type="text" name="email" id="login_email" class="form-control" value={{Cookie::get('emailcookie')==null ? "":Cookie::get('emailcookie')}}>
           @error('email')
                <div class="text-danger">
                     {{ $message }}
@@ -29,7 +29,7 @@
        
 
         <div class="form-check">
-          <input type="checkbox" name="rememberme" id="remember_email_checkbox" class="form-check-input" value="rem">
+          <input type="checkbox" name="remember-email" id="remember_email_checkbox" class="form-check-input" {{Cookie::get('emailcookie')==null?"":"Checked"}}>
           <label for="" class="form-check-label text-black">Remember email</label>
         </div>
         

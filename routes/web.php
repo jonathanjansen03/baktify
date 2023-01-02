@@ -1,17 +1,14 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserDashboardController;
 
-Route::get('/', function () {
-    return view('pages.home');
-});
-
-Route::get('/about-us', function () {
-    return view('pages.about-us');
-});
+Route::get('/', [HomeController::class, 'viewIndex'])->name('home');
+Route::get('/about-us', [HomeController::class, 'viewAboutUs'])->name('about-us');
+Route::get('/product-detail', [HomeController::class, 'viewProducts'])->name('product-detail');
 
 //route user dashboard
 Route::get('dashboard', [UserDashboardController::class, 'index'])->name('dashboard-user');
@@ -27,8 +24,3 @@ Route::post('sign-in', [LoginController::class, 'login'])->name('login');
 
 //Route logout
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
-
-// ini nanti diganti ke /product/{id}
-Route::get('/product-detail', function () {
-    return view('pages.product-detail');
-});
