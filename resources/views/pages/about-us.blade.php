@@ -9,7 +9,7 @@
       <h6 class="text-center text-black">Conny Blue, CEO Baktify</h6>
     </div>
 
-    <hr>
+    <hr class="gradient-hr">
 
     <div class="about-us-table">
       <div class="row">

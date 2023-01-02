@@ -126,7 +126,7 @@
     </div>
 
     <div class="hr-text">
-      <hr>
+      <hr class="gradient-hr">
       <h5 class="text-center text-black">One-stop store for all your musical enthusiasm needs</h5>
       <p class="text-center">We provide a wide variety of music genre and album</p>
     </div>
