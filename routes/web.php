@@ -12,6 +12,7 @@ Route::get('/about-us', function () {
 });
 
 Route::get('sign-up', [RegisterController::class, 'registerPage'])->name('signup');
+Route::get('sign-up/user', [RegisterController::class, 'register'])->name('register');
 
 Route::get('/sign-in', function () {
     return view('pages.sign-in');
