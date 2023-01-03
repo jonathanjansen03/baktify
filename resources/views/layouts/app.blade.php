@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="{{ asset('/styles/sign-in.css') }}">
     <link rel="stylesheet" href="{{ asset('/styles/product-detail.css') }}">
     <link rel="stylesheet" href="{{ asset('/styles/product-list.css') }}">
+    <link rel="stylesheet" href="{{ asset('/styles/insert-product.css') }}">
 </head>
 <body>
-    {{-- ini cuma navbar nya doang yg diganti2, tergantung role web visitornya (guest/member/admin) --}}
     @if (Auth::check())
         @if (Auth::user()->role == "member")
             @include('includes.member-navbar')
@@ -30,6 +30,7 @@
     <div id="main_content" class="container-fluid">
         @yield('main-content')
     </div>
+    
     <footer class="grey-shadow">
         <p class="text-center"> &#169; 2021 Baktify, Inc. All rights reserved.</p>
     </footer>

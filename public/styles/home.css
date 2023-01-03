@@ -3,6 +3,10 @@
     margin-top: 5rem;
 }
 
+#hr_text .gradient-hr {
+    margin: 5rem 2rem 1rem;
+}
+
 #songs_container {
     border-radius: 1rem;
     display: grid;
@@ -20,12 +24,6 @@
     justify-content: center;
     height: 7rem;
     width: 5rem;
-}
-
-.gradient-hr {
-    background: linear-gradient(to right, white, rgba(0, 0, 0, 0.7), white);
-    height: 0.05rem;
-    margin: 5rem 2rem 1rem;
 }
 
 .home-middle {

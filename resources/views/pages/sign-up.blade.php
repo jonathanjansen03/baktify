@@ -3,6 +3,7 @@
 @section('title', 'Sign Up')
 @section('main-content')
     <h2 class="text-center text-black font-weight-bold">Create your account</h2>
+    
     <div id="sign_up_form" class="form-group mx-auto grey-shadow">
         <form action="{{ Route('register') }}" method="GET">
             <div class="form-group">

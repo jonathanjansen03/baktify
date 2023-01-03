@@ -40,6 +40,5 @@
             
             <button type="button" class="btn btn-light" id="register_btn" onclick="location.href='{{ route('signup') }}'">Register</button>
         </form>
-     
     </div>
 @endsection

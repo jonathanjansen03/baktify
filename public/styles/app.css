@@ -60,6 +60,11 @@ footer p {
     min-height: 100vh;
 }
 
+.gradient-hr {
+    background: linear-gradient(to right, white, rgba(0, 0, 0, 0.7), white);
+    height: 0.05rem;
+}
+
 .form-inline a {
     color: gray;
     text-decoration: none;
@@ -77,6 +82,30 @@ footer p {
 .container-fluid {
     display: flex;
     flex-direction: column;
+}
+
+.blue-btn {
+    background-color: #5cabff;
+    color: white;
+    transition: 0.2s;
+}
+
+.blue-btn:hover {
+    box-shadow: 0 0.3rem 0.5rem #a8d2ff;
+    color: white;
+    transform: translateY(-0.1rem);
+}
+
+.red-btn {
+    background-color: #ff4848;
+    color: white;
+    transition: 0.2s;
+}
+
+.red-btn:hover {
+    box-shadow: 0 0.3rem 0.5rem #ffbdbd;
+    color: white;
+    transform: translateY(-0.1rem);
 }
 
 .purple-btn {

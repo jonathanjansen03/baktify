@@ -33,3 +33,8 @@ Route::get('/product-list', function() {
 Route::get('/manage-products', function() {
   return view('pages.manage-products');
 });
+
+// Route insert product (admin)
+Route::get('/insert-product', function() {
+  return view('pages.insert-product');
+});
