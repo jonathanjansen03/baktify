@@ -24,7 +24,12 @@ Route::post('sign-in', [LoginController::class, 'login'])->name('login');
 // Route logout
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route product list
+// Route product list (guest/member)
 Route::get('/product-list', function() {
   return view('pages.product-list');
+});
+
+// Route manage products (admin)
+Route::get('/manage-products', function() {
+  return view('pages.manage-products');
 });
