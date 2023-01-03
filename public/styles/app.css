@@ -56,6 +56,10 @@ footer p {
     flex-direction: column;
 }
 
+#main_content {
+    min-height: 100vh;
+}
+
 .form-inline a {
     color: gray;
     text-decoration: none;

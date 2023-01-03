@@ -12,6 +12,9 @@
         </form>
     </div>
 
+    {{-- kalo product not found --}}
+    {{-- <p id="product_not_found_message" class="text-black">No product match for 'bluerock'</p> --}}
+
     <div id="product_list_container">
         <div class="product-container">
             <div class="product-wrapper grey-shadow text-center">
@@ -111,16 +114,16 @@
     </div>
 
     <div class="pagination-container">
-    <div class="pagination-results">
-        <p class="text-black">
-            Showing <b class="text-black">1</b> to <b class="text-black">12</b> of <b class="text-black">13</b> results
-        </p>
-    </div>
-    <div class="pages-btn">
-        <button type="button" class="btn">&lt;</button>
-        <button type="button" class="btn">1</button>
-        <button type="button" class="btn">2</button>
-        <button type="button" class="btn">&gt;</button>
-    </div>
+        <div class="pagination-results">
+            <p class="text-black">
+                Showing <b class="text-black">1</b> to <b class="text-black">12</b> of <b class="text-black">13</b> results
+            </p>
+        </div>
+        <div class="pages-btn">
+            <button type="button" class="btn">&lt;</button>
+            <button type="button" class="btn">1</button>
+            <button type="button" class="btn">2</button>
+            <button type="button" class="btn">&gt;</button>
+        </div>
     </div>
 @endsection

@@ -1,11 +1,18 @@
 #product_list_header,
-#product_list_container {
+#product_list_container,
+#product_not_found_message {
     margin: 0 5rem;
 }
 
 #product_list_header {
     display: flex;
     justify-content: space-between;
+}
+
+#product_list_header h3,
+.product-container hr,
+.pagination-results p {
+    margin-bottom: 0;
 }
 
 #product_list_header input {
@@ -17,6 +24,10 @@
     grid-row-gap: 2rem;
     grid-template-columns: auto auto auto auto;
     justify-items: center;
+}
+
+#product_list_container,
+#product_not_found_message {
     margin-top: 3rem;
 }
 
@@ -27,7 +38,6 @@
 .product-container hr {
     height: 1rem;
     width: 80%;
-    margin-bottom: 0;
 }
 
 .product-btns-container {
@@ -98,10 +108,6 @@
 .pagination-results {
     display: flex;
     align-items: center;
-}
-
-.pagination-results p {
-    margin-bottom: 0;
 }
 
 .pagination-container {

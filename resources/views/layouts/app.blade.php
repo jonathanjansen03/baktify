@@ -19,7 +19,7 @@
   {{-- ini cuma navbar nya doang yg diganti2, tergantung role web visitornya (guest/member/admin) --}}
   @include('includes.guest-navbar')
 
-  <div class="container-fluid">
+  <div id="main_content" class="container-fluid">
     @yield('main-content')
   </div>
   <footer class="grey-shadow">
