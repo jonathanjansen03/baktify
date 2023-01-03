@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Baktify | @yield('title')</title>
-  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ asset('/styles/app.css') }}">
-  <link rel="stylesheet" href="{{ asset('/styles/home.css') }}">
-  <link rel="stylesheet" href="{{ asset('/styles/about-us.css') }}">
-  <link rel="stylesheet" href="{{ asset('/styles/sign-up.css') }}">
-  <link rel="stylesheet" href="{{ asset('/styles/sign-in.css') }}">
-  <link rel="stylesheet" href="{{ asset('/styles/product-detail.css') }}">
-  <link rel="stylesheet" href="{{ asset('/styles/product-list.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Baktify | @yield('title')</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('/styles/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('/styles/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('/styles/about-us.css') }}">
+    <link rel="stylesheet" href="{{ asset('/styles/sign-up.css') }}">
+    <link rel="stylesheet" href="{{ asset('/styles/sign-in.css') }}">
+    <link rel="stylesheet" href="{{ asset('/styles/product-detail.css') }}">
+    <link rel="stylesheet" href="{{ asset('/styles/product-list.css') }}">
 </head>
 <body>
-  {{-- ini cuma navbar nya doang yg diganti2, tergantung role web visitornya (guest/member/admin) --}}
-  @include('includes.guest-navbar')
+    {{-- ini cuma navbar nya doang yg diganti2, tergantung role web visitornya (guest/member/admin) --}}
+    @if (Auth::check())
+        @if (Auth::user()->role == "member")
+            @include('includes.member-navbar')
+        @elseif (Auth::user()->role == "member")
+            @include('includes.admin-navbar')
+        @endif
+    @else
+        @include('includes.guest-navbar')
+    @endif
 
-  <div id="main_content" class="container-fluid">
-    @yield('main-content')
-  </div>
-  <footer class="grey-shadow">
-    <p class="text-center"> &#169; 2021 Baktify, Inc. All rights reserved.</p>
-  </footer>
+    <div id="main_content" class="container-fluid">
+        @yield('main-content')
+    </div>
+    <footer class="grey-shadow">
+        <p class="text-center"> &#169; 2021 Baktify, Inc. All rights reserved.</p>
+    </footer>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

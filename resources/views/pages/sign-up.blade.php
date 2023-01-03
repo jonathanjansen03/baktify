@@ -4,14 +4,14 @@
 @section('main-content')
     <h2 class="text-center text-black font-weight-bold">Create your account</h2>
     <div id="sign_up_form" class="form-group mx-auto grey-shadow">
-        <form action="{{Route('register')}}" method="GET">
+        <form action="{{ Route('register') }}" method="GET">
             <div class="form-group">
                 <label for="sign_up_name" class="text-black">Name</label>
                 <input type="text" name="name" id="sign_up_name" class="form-control">
                  @error('name')
                     <div class="text-danger">
                         {{ $message }}
-                     </div>
+                    </div>
                 @enderror
             </div>
 
@@ -21,7 +21,7 @@
                 @error('email')
                     <div class="text-danger">
                         {{ $message }}
-                     </div>
+                    </div>
                 @enderror
             </div>
 
@@ -33,8 +33,7 @@
                         <div class="text-danger">
                             {{ $message }}
                         </div>
-                     @enderror
-                    
+                    @enderror
                 </div>
 
                 <div class="form-group col">
@@ -43,7 +42,7 @@
                     @error('password_confirmation')
                     <div class="text-danger">
                         {{ $message }}
-                     </div>
+                    </div>
                 @enderror
                 </div>
             </div>
