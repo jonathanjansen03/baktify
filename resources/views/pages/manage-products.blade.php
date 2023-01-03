@@ -8,6 +8,7 @@
         <form action="" class="form-inline">
             <input type="text" name="search_product" id="search_product" class="form-control" placeholder="Search product">
             <button type="submit" class="btn purple-btn">Search</button>
+            <button type="button" class="btn insert-product-btn">Insert Product</button>
         </form>
     </div>
 

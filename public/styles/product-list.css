@@ -36,23 +36,32 @@
     padding: 0 1rem;
 }
 
+.insert-product-btn,
+.product-btns-container button {
+    color: white;
+    margin-left: 1rem;
+    transition: 0.2s;
+}
+
 .product-btns-container button {
     border-radius: 1rem;
     color: white;
     padding: 0.2rem 0.7rem;
-    transition: 0.2s;
 }
 
+.insert-product-btn:hover,
 .product-btns-container button:hover {
     color: white;
     transform: translateY(-0.1rem);
 }
 
+.insert-product-btn,
 .add-to-cart-btn,
 .edit-product-btn {
     background-color: #5cabff;
 }
 
+.insert-product-btn:hover,
 .add-to-cart-btn:hover,
 .edit-product-btn:hover {
     box-shadow: 0 0.3rem 0.5rem #a8d2ff;
