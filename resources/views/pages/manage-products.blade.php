@@ -8,7 +8,7 @@
         <form action="" class="form-inline">
             <input type="text" name="search_product" id="search_product" class="form-control" placeholder="Search product">
             <button type="submit" class="btn purple-btn">Search</button>
-            <button type="button" class="btn insert-product-btn">Insert Product</button>
+            <button type="button" id="insert_product_btn" class="btn blue-btn">Insert Product</button>
         </form>
     </div>
 
@@ -26,8 +26,8 @@
                 <hr class="mx-auto">
 
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn edit-product-btn">Edit Product</button>
-                    <button type="button" class="btn remove-product-btn">Remove Product</button>
+                    <button type="button" class="btn blue-btn">Edit Product</button>
+                    <button type="button" class="btn red-btn">Remove Product</button>
                 </div>
             </div>
         </div>
@@ -42,8 +42,8 @@
                 <hr class="mx-auto">
 
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn edit-product-btn">Edit Product</button>
-                    <button type="button" class="btn remove-product-btn">Remove Product</button>
+                    <button type="button" class="btn blue-btn">Edit Product</button>
+                    <button type="button" class="btn red-btn">Remove Product</button>
                 </div>
             </div>
         </div>
@@ -58,8 +58,8 @@
                 <hr class="mx-auto">
 
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn edit-product-btn">Edit Product</button>
-                    <button type="button" class="btn remove-product-btn">Remove Product</button>
+                    <button type="button" class="btn blue-btn">Edit Product</button>
+                    <button type="button" class="btn red-btn">Remove Product</button>
                 </div>
             </div>
         </div>
@@ -74,8 +74,8 @@
                 <hr class="mx-auto">
 
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn edit-product-btn">Edit Product</button>
-                    <button type="button" class="btn remove-product-btn">Remove Product</button>
+                    <button type="button" class="btn blue-btn">Edit Product</button>
+                    <button type="button" class="btn red-btn">Remove Product</button>
                 </div>
             </div>
         </div>
@@ -90,8 +90,8 @@
                 <hr class="mx-auto">
 
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn edit-product-btn">Edit Product</button>
-                    <button type="button" class="btn remove-product-btn">Remove Product</button>
+                    <button type="button" class="btn blue-btn">Edit Product</button>
+                    <button type="button" class="btn red-btn">Remove Product</button>
                 </div>
             </div>
         </div>
@@ -106,8 +106,8 @@
                 <hr class="mx-auto">
 
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn edit-product-btn">Edit Product</button>
-                    <button type="button" class="btn remove-product-btn">Remove Product</button>
+                    <button type="button" class="btn blue-btn">Edit Product</button>
+                    <button type="button" class="btn red-btn">Remove Product</button>
                 </div>
             </div>
         </div>

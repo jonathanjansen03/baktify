@@ -11,6 +11,9 @@
         </form>
     </div>
 
+    {{-- kalo product not found --}}
+    {{-- <p id="product_not_found_message" class="text-black">No product match for 'bluerock'</p> --}}
+
     <div id="product_list_container">
         <div class="product-container">
             <div class="product-wrapper grey-shadow text-center">
@@ -22,7 +25,7 @@
                 <hr class="mx-auto">
     
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn add-to-cart-btn">Add to Cart</button>
+                    <button type="button" class="btn blue-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -37,7 +40,7 @@
                 <hr class="mx-auto">
     
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn add-to-cart-btn">Add to Cart</button>
+                    <button type="button" class="btn blue-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -52,7 +55,7 @@
                 <hr class="mx-auto">
     
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn add-to-cart-btn">Add to Cart</button>
+                    <button type="button" class="btn blue-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -67,7 +70,7 @@
                 <hr class="mx-auto">
     
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn add-to-cart-btn">Add to Cart</button>
+                    <button type="button" class="btn blue-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -82,7 +85,7 @@
                 <hr class="mx-auto">
     
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn add-to-cart-btn">Add to Cart</button>
+                    <button type="button" class="btn blue-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -97,7 +100,7 @@
                 <hr class="mx-auto">
     
                 <div class="product-btns-container text-left">
-                    <button type="button" class="btn add-to-cart-btn">Add to Cart</button>
+                    <button type="button" class="btn blue-btn">Add to Cart</button>
                 </div>
             </div>
         </div>
