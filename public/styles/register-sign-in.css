@@ -1,4 +1,5 @@
-#sign_in_form {
+#sign_in_form,
+#sign_up_form {
     border-radius: 1rem;
     margin: 2rem 0 4rem;
     padding: 2rem;
@@ -7,6 +8,14 @@
 
 #sign_in_form button {
     margin: 1rem 0;
+}
+
+#sign_up_form button {
+    margin-top: 1rem;
+}
+
+#sign_in_form button,
+#sign_up_form button {
     width: 100%;
 }
 

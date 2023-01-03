@@ -84,6 +84,11 @@ footer p {
     flex-direction: column;
 }
 
+.btn:focus {
+    box-shadow: none;
+    outline: none;
+}
+
 .blue-btn {
     background-color: #5cabff;
     color: white;
