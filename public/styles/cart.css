@@ -5,14 +5,15 @@ table {
 
 caption {
     caption-side: top;
-    margin-bottom: 1rem;
 }
 
-caption h5 {
+caption h5,
+#user_cart p,
+.table {
     margin-bottom: 0;
 }
 
-tr > td:first-child {
+#user_cart tr > td:first-child {
     display: flex;
     align-items: center;
 }
@@ -28,7 +29,6 @@ tr > td:first-child {
 
 #user_cart p {
     margin: 0 0 0 1rem;
-    margin-bottom: 0;
 }
 
 #empty_cart_message,
@@ -36,21 +36,21 @@ tr > td:first-child {
     margin-left: 5%;
 }
 
-.table {
-    margin-bottom: 0;
+#checkout_form input {
+    width: 10%;
 }
 
-.table th {
+.table thead th,
+.table tbody td {
+    border: none;
+}
+
+.table thead th {
     background-color: #95a5a6;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
 
-.table th,
-.table td {
-    border: none;
-}
-
-.table td {
+.table tbody td {
     vertical-align: middle;
 }
