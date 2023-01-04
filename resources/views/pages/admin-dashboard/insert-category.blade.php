@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <p>halo ini dashboard admin</p>
+    <p>ini add category</p>
 </body>
 </html>

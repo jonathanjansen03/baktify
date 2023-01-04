@@ -1,5 +1,5 @@
 <nav id="member_navbar" class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="{{Route('home')}}">
     <img src="{{ asset('images/logo.png') }}" alt="logo" id="logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,10 +8,10 @@
   <div id="mainNavbar" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto mx-auto">
       <li class="nav-item">
-        <a class="nav-link text-black" href="">About us</a>
+        <a class="nav-link text-black" href="{{Route('about-us')}}">About us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-black" href="">Products</a>
+        <a class="nav-link text-black" href="{{Route('product-list')}}">Products</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-black" href="">My Transaction</a>

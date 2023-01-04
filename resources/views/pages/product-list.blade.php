@@ -15,6 +15,7 @@
     {{-- <p id="product_not_found_message" class="text-black">No product match for 'bluerock'</p> --}}
 
     <div id="product_list_container">
+        @for ($i = 1; $i <= 10; $i++)
         <div class="product-container">
             <div class="product-wrapper grey-shadow text-center">
                 <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product">
@@ -23,88 +24,20 @@
                 <div class="product-category mx-auto">Country</div>
     
                 <hr class="mx-auto">
-    
-                <div class="product-btns-container text-left">
-                    <button type="button" class="btn blue-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-container">
-            <div class="product-wrapper grey-shadow text-center">
-                <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product">
-                <div class="text-black font-weight-bold">Come on Over</div>
-                <div>IDR 85000</div>
-                <div class="product-category mx-auto">Country</div>
-    
-                <hr class="mx-auto">
-    
-                <div class="product-btns-container text-left">
-                    <button type="button" class="btn blue-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-container">
-            <div class="product-wrapper grey-shadow text-center">
-                <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product">
-                <div class="text-black font-weight-bold">Come on Over</div>
-                <div>IDR 85000</div>
-                <div class="product-category mx-auto">Country</div>
-    
-                <hr class="mx-auto">
-    
-                <div class="product-btns-container text-left">
-                    <button type="button" class="btn blue-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-container">
-            <div class="product-wrapper grey-shadow text-center">
-                <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product">
-                <div class="text-black font-weight-bold">Come on Over</div>
-                <div>IDR 85000</div>
-                <div class="product-category mx-auto">Country</div>
-    
-                <hr class="mx-auto">
-    
-                <div class="product-btns-container text-left">
-                    <button type="button" class="btn blue-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-container">
-            <div class="product-wrapper grey-shadow text-center">
-                <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product">
-                <div class="text-black font-weight-bold">Come on Over</div>
-                <div>IDR 85000</div>
-                <div class="product-category mx-auto">Country</div>
-    
-                <hr class="mx-auto">
-    
-                <div class="product-btns-container text-left">
-                    <button type="button" class="btn blue-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-container">
-            <div class="product-wrapper grey-shadow text-center">
-                <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product">
-                <div class="text-black font-weight-bold">Come on Over</div>
-                <div>IDR 85000</div>
-                <div class="product-category mx-auto">Country</div>
-    
-                <hr class="mx-auto">
-    
-                <div class="product-btns-container text-left">
-                    <button type="button" class="btn blue-btn">Add to Cart</button>
-                </div>
+                @if(Auth::check() && Auth::user()->role=="admin")
+                    <div class="product-btns-container text-left">
+                        <button type="button" class="btn blue-btn">Edit Product</button>
+                        <button type="button" class="btn red-btn">Remove Product</button>
+                    </div>
+                @else
+                    <div class="product-btns-container text-left">
+                        <button type="button" class="btn blue-btn">Add to Cart</button>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
+ 
 
     <div class="pagination-container">
         <div class="pagination-results">

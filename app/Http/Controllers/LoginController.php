@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Cookie;
 class LoginController extends Controller
 {
     public function index(){
-        return view('pages.sign-in');
+        return view('pages.auth.sign-in');
     }
 
     public function login(Request $request)
@@ -34,7 +34,7 @@ class LoginController extends Controller
                 'email' => 'The provided credentials do not match our records.'
             ]);
         }
-        return redirect('/dashboard');
+        return redirect('/');
     }
 
     public function logout()
