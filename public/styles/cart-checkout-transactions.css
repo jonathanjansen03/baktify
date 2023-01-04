@@ -32,7 +32,8 @@ caption h5,
 }
 
 #empty_cart_message,
-#checkout_form {
+#checkout_form,
+.transaction-details-wrapper h5 {
     margin-left: 5%;
 }
 
@@ -53,4 +54,10 @@ caption h5,
 
 .table tbody td {
     vertical-align: middle;
+}
+
+.transaction-container + .gradient-hr {
+    /* padding: 0 5rem; */
+    width: 90%;
+    margin: 2rem 0;
 }

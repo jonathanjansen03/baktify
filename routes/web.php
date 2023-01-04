@@ -44,3 +44,7 @@ Route::get('/cart', function() {
 Route::get('/checkout', function() {
   return view('pages.checkout');
 });
+
+Route::get('/transactions', function() {
+  return view('pages.transactions');
+});
