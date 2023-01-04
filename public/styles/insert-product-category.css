@@ -1,0 +1,36 @@
+#insert_form_header {
+    margin: 0 5rem 1.5rem;
+}
+
+#insert_form {
+    padding: 0 5rem;
+}
+
+#insert_form .gradient-hr {
+    margin: 2rem 0;
+}
+
+#insert_form .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#insert_cancel_btns_container button {
+    padding: 0.5rem 2rem;
+    margin: 2rem 1rem 0 0;
+}
+
+#existing_categories_list {
+    display: flex;
+    margin-left: 5rem;
+    margin: 0 5rem 2rem;
+}
+
+#existing_categories_list p {
+    background-color: #6857ff;
+    border-radius: 0.3rem;
+    color: white;
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+}

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('/styles/register-sign-in.css') }}">
     <link rel="stylesheet" href="{{ asset('/styles/product-detail.css') }}">
     <link rel="stylesheet" href="{{ asset('/styles/product-list.css') }}">
-    <link rel="stylesheet" href="{{ asset('/styles/insert-product.css') }}">
+    <link rel="stylesheet" href="{{ asset('/styles/insert-product-category.css') }}">
 </head>
 <body>
     @if (Auth::check())

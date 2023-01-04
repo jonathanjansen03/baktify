@@ -3,7 +3,9 @@
 @section('title', 'Insert Product')
 
 @section('main-content')
-    <form action="" id="insert_product_form">
+    <h3 id="insert_form_header" class="text-black">Add New Product</h3>
+
+    <form action="" id="insert_form">
         <div class="form-group row">
             <label for="product_image" class="col-sm-2 col-form-label">Image</label>
             <input type="file" class="form-control-file col-sm-3" id="product_image">
@@ -47,8 +49,6 @@
                 <option value="Electro">Electro</option>
             </select>
         </div>
-
-        <hr class="gradient-hr">
 
         <div id="insert_cancel_btns_container">
             <button type="submit" class="btn blue-btn">Insert</button>
