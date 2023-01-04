@@ -1,5 +1,5 @@
 :root {
-    --purple: #6857ff;
+    --purple: #5e5df0;
 }
 
 * {
@@ -94,25 +94,25 @@ footer p {
 }
 
 .blue-btn {
-    background-color: #5cabff;
+    background-color: #5da5f0;
     color: white;
     transition: 0.2s;
 }
 
 .blue-btn:hover {
-    box-shadow: 0 0.3rem 0.5rem #a8d2ff;
+    box-shadow: 0 0.3rem 0.5rem #bedbf9;
     color: white;
     transform: translateY(-0.1rem);
 }
 
 .red-btn {
-    background-color: #ff4848;
+    background-color: #ff4742;
     color: white;
     transition: 0.2s;
 }
 
 .red-btn:hover {
-    box-shadow: 0 0.3rem 0.5rem #ffbdbd;
+    box-shadow: 0 0.3rem 0.5rem #ffbbb9;
     color: white;
     transform: translateY(-0.1rem);
 }
@@ -124,7 +124,7 @@ footer p {
 }
 
 .purple-btn:hover {
-    box-shadow: 0 0.3rem 0.5rem #afa7ff;
+    box-shadow: 0 0.3rem 0.5rem #b6b6f8;
     color: white;
     transform: translateY(-0.1rem);
 }

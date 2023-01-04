@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('/styles/product-list.css') }}">
     <link rel="stylesheet" href="{{ asset('/styles/insert-product-category.css') }}">
     <link rel="stylesheet" href="{{ asset('/styles/user-profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('/styles/cart.css') }}">
 </head>
 <body>
     @if (Auth::check())

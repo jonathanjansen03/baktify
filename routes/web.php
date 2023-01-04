@@ -36,3 +36,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/user-profile', function() {
   return view('pages.user-profile');
 });
+
+Route::get('/cart', function() {
+  return view('pages.cart');
+});
