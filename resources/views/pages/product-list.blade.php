@@ -26,8 +26,10 @@
                 <hr class="mx-auto">
                 @if(Auth::check() && Auth::user()->role=="admin")
                     <div class="product-btns-container text-left">
-                        <button type="button" class="btn blue-btn">Edit Product</button>
-                        <button type="button" class="btn red-btn">Remove Product</button>
+                        <button type="submit" class="btn blue-btn">Edit Product</button>
+                        <form action="">
+                            <button type="submit" class="btn red-btn">Remove Product</button>
+                        </form>
                     </div>
                 @else
                     <div class="product-btns-container text-left">
