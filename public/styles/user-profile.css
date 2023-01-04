@@ -1,0 +1,10 @@
+#user_profile_container {
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 2rem;
+    width: 60%;
+}
+
+#profile_btns_container button {
+    margin: 0.5rem 0.5rem 0 0;
+}

@@ -25,7 +25,6 @@ Route::get('/products', [UserDashboardController::class, 'productList'])->name('
 
 //Route Admin Dashboard
 
-
 // Route Auth
 Route::get('sign-up', [RegisterController::class, 'index'])->name('signup');
 Route::get('sign-up/user', [RegisterController::class, 'register'])->name('register');
@@ -33,3 +32,7 @@ Route::get('sign-in', [LoginController::class, 'index'])->name('signin');
 Route::post('sign-in', [LoginController::class, 'login'])->name('login');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
+// mungkin ini nanti bisa diganti user id atau username
+Route::get('/user-profile', function() {
+  return view('pages.user-profile');
+});

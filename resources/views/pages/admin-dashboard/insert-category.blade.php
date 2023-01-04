@@ -22,4 +22,9 @@
             <button type="button" class="btn red-btn">Cancel</button>
         </div>
     </form>
+
+    {{-- error message --}}
+    {{-- <div class="alert alert-danger">
+        The name field is required.
+    </div> --}}
 @endsection

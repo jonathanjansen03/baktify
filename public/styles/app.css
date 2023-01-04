@@ -60,6 +60,10 @@ footer p {
     min-height: 100vh;
 }
 
+.alert-danger {
+    color: #ff4848;
+}
+
 .gradient-hr {
     background: linear-gradient(to right, white, rgba(0, 0, 0, 0.7), white);
     height: 0.05rem;
