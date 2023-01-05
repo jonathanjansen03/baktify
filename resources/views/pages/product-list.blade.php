@@ -8,6 +8,9 @@
         <form action="" class="form-inline">
             <input type="text" name="search_product" id="search_product" class="form-control" placeholder="Search product">
             <button type="submit" class="btn purple-btn">Search</button>
+            @if(Auth::check() && Auth::user()->role=="admin")
+                <button type="button" id="insert_product_btn" class="btn blue-btn" onclick="location.href='{{ route('view-insert-product') }}'">Insert Product</button>
+            @endif
         </form>
     </div>
 
@@ -15,19 +18,21 @@
     {{-- <p id="product_not_found_message" class="text-black">No product match for 'bluerock'</p> --}}
 
     <div id="product_list_container">
-        @for ($i = 1; $i <= 10; $i++)
+        @foreach ($products as $product)
         <div class="product-container">
             <div class="product-wrapper grey-shadow text-center">
-                <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product">
-                <div class="text-black font-weight-bold">Come on Over</div>
-                <div>IDR 85000</div>
-                <div class="product-category mx-auto">Country</div>
+                <img src="{{asset('storage/image/'.$product->product_img)}}" alt="Product">
+                <div class="text-black font-weight-bold">{{$product->product_name}}</div>
+                <div>IDR {{$product->product_price}}</div>
+                <div class="product-category mx-auto">{{$product->category->category_name}}</div>
     
                 <hr class="mx-auto">
                 @if(Auth::check() && Auth::user()->role=="admin")
                     <div class="product-btns-container text-left">
-                        <button type="submit" class="btn blue-btn">Edit Product</button>
-                        <form action="">
+                        <button type="submit" class="btn blue-btn" onclick="location.href='{{ route('view-update-product', $product->id) }}'">Edit Product</button>
+                        <form action="{{Route('delete-product', $product->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
                             <button type="submit" class="btn red-btn">Remove Product</button>
                         </form>
                     </div>
@@ -38,7 +43,7 @@
                 @endif
             </div>
         </div>
-        @endfor
+        @endforeach
     </div>
  
 

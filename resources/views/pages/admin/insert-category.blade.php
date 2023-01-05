@@ -21,16 +21,13 @@
         <div id="insert_cancel_btns_container">
             <button type="submit" class="btn blue-btn">Insert</button>
         </div>
-
-        @error('category_name')
-            <div class="text-danger">
-                {{ $message }}
-            </div>
-        @enderror
     </form>
 
     {{-- error message --}}
-    {{-- <div class="alert alert-danger">
+    @error('category_name')
+    <div class="alert alert-danger">
         The name field is required.
-    </div> --}}
+    </div>
+
+    @enderror
 @endsection

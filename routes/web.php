@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserDashboardController;
@@ -14,16 +15,21 @@ Route::get('/about-us', [HomeController::class, 'viewAboutUs'])->name('about-us'
 
 //Middleware Admin Route
 Route::group(['middleware'=>'admin'], function(){
-  Route::get('admin/dashboard/insert-product', [AdminDashboardController::class, 'insertProduct'])->name('view-insert-product');
-  Route::get('admin/dashboard/insert-category', [AdminDashboardController::class, 'insertCategory'])->name('view-insert-category');
-  Route::post('admin/dashboard/insert-category', [CategoryController::class, 'createCategory'])->name('insert-category');
+  Route::get('admin/insert-product', [AdminDashboardController::class, 'insertProduct'])->name('view-insert-product');
+  Route::post('admin/insert-product', [ProductController::class, 'createProduct'])->name('insert-product');
+  Route::get('admin/insert-category', [AdminDashboardController::class, 'insertCategory'])->name('view-insert-category');
+  Route::post('admin/insert-category', [CategoryController::class, 'createCategory'])->name('insert-category');
+  Route::get('admin/edit-product/{id}', [AdminDashboardController::class, 'editProduct'])->name('view-update-product');
+  Route::patch('admin/edit-product/{id}', [ProductController::class, 'updateProduct'])->name('update-product');
+  Route::delete('admin/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
+
 });
 
 //Route Home
 Route::get('/product-detail', [HomeController::class, 'viewProducts'])->name('product-detail');
 
 // Route User Dashboard
-Route::get('/products', [UserDashboardController::class, 'productList'])->name('product-list');
+Route::get('/products', [ProductController::class, 'productList'])->name('product-list');
 
 //Route Admin Dashboard
 

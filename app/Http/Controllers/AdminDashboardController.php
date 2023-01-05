@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -12,12 +13,18 @@ class AdminDashboardController extends Controller
     }
 
     public function insertProduct(){
-        return view('pages.admin.insert-product');
+        $categories = Category::all();
+        return view('pages.admin.insert-product', compact('categories'));
     }
 
     public function insertCategory(){
         $categories = Category::all();
         return view('pages.admin.insert-category',compact('categories'));
+    }
+
+    public function editProduct($id){
+        $product = Product::findOrFail($id);
+        return view('pages.admin.update-product', compact('product'));
     }
 
    
