@@ -85,6 +85,6 @@ class ProductController extends Controller
 
     public function deleteProduct($id){
         Product::destroy($id);
-        return back();
+        return back()->with('alert', 'Success remove product');
     }
 }

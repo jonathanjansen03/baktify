@@ -22,7 +22,7 @@
 			<div id="navbar_profile">
 				{{-- ini nanti diganti jadi nama member --}}
 				<span>member</span>
-				<a href="">View profile</a>
+				<a href="{{Route('view-profile')}}">View profile</a>
 			</div>
 		</form>
 	</div>

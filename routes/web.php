@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserDashboardController;
 
-
+// general route
 Route::get('/', [HomeController::class, 'viewIndex'])->name('home');
 Route::get('/about-us', [HomeController::class, 'viewAboutUs'])->name('about-us');
+Route::get('/product-detail', [HomeController::class, 'viewProducts'])->name('product-detail');
+Route::get('/products', [ProductController::class, 'productList'])->name('product-list');
 
 //Middleware Admin Route
 Route::group(['middleware'=>'admin'], function(){
@@ -22,16 +24,8 @@ Route::group(['middleware'=>'admin'], function(){
   Route::get('admin/edit-product/{id}', [AdminDashboardController::class, 'editProduct'])->name('view-update-product');
   Route::patch('admin/edit-product/{id}', [ProductController::class, 'updateProduct'])->name('update-product');
   Route::delete('admin/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
-
+  
 });
-
-//Route Home
-Route::get('/product-detail', [HomeController::class, 'viewProducts'])->name('product-detail');
-
-// Route User Dashboard
-Route::get('/products', [ProductController::class, 'productList'])->name('product-list');
-
-//Route Admin Dashboard
 
 // Route Auth
 Route::get('sign-up', [RegisterController::class, 'index'])->name('signup');
@@ -43,7 +37,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 // mungkin ini nanti bisa diganti user id atau username
 Route::get('/user-profile', function() {
   return view('pages.user-profile');
-});
+})->name('view-profile');
 
 Route::get('/cart', function() {
   return view('pages.cart');

@@ -20,7 +20,7 @@
 		<form class="form-inline">
 			<div id="navbar_profile">
 				<span>admin</span>
-				<a href="">View profile</a>
+				<a href="{{Route('view-profile', Auth::user()->id)}}">View profile</a>
 			</div>
 		</form>
 	</div>

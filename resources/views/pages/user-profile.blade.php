@@ -10,12 +10,12 @@
 		<fieldset disabled>
 			<div class="form-group">
 				<label for="user_name">Name</label>
-				<input type="text" name="user_name" id="user_name" class="form-control" value="admin">
+				<input type="text" name="user_name" id="user_name" class="form-control" value="{{Auth::user()->name}}">
 			</div>
 			
 			<div class="form-group">
 				<label for="user_email">Email Address</label>
-				<input type="text" name="user_email" id="user_email" class="form-control" value="admin">
+				<input type="text" name="user_email" id="user_email" class="form-control" value="{{Auth::user()->email}} ">
 			</div>
 
 			{{-- kalo di soal disuruhnya itu dummy password, ga ngerti maksudnya itu harus random tiap kali reload atau semuanya pake fake password yang sama --}}
@@ -26,13 +26,13 @@
 
 			<div class="form-group">
 				<label for="user_address">Address</label>
-				<textarea name="user_address" id="user_address" class="form-control">admin address</textarea>
+				<textarea name="user_address" id="user_address" class="form-control" autofocus>{{Auth::user()->address}}</textarea>
 				<small id="address_desc" class="form-text">Please write your actual address where you can receive mail.</small>
 			</div>
 
 			<div class="form-group">
 				<label for="user_phone">Phone</label>
-				<input type="text" name="" id="user_phone" class="form-control" value="081231231231">
+				<input type="text" name="" id="user_phone" class="form-control" value="{{Auth::user()->phone}}">
 			</div>
 		</fieldset>
 		
