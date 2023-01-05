@@ -11,10 +11,10 @@
 				<a class="nav-link text-black" href="{{Route('about-us')}}">About us</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-black" href="{{Route('product-detail')}}">Manage Products</a>
+				<a class="nav-link text-black" href="{{Route('product-list')}}">Manage Products</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-black" href="{{Route('insert-category')}}">Add Category</a>
+				<a class="nav-link text-black" href="{{Route('view-insert-category')}}">Add Category</a>
 			</li>
 		</ul>
 		<form class="form-inline">

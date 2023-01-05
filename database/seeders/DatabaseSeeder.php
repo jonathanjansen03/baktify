@@ -24,5 +24,14 @@ class DatabaseSeeder extends Seeder
             'address' => 'admin address not identified',
             'phone' => 11111111111
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'budi setiawan',
+            'email' => 'budi@gmail.com',
+            'password' => Hash::make('12345678'),
+            'role' => 'member',
+            'address' => 'jalan krakatau no 8',
+            'phone' => 222222222222
+        ]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -13,8 +14,9 @@ Route::get('/about-us', [HomeController::class, 'viewAboutUs'])->name('about-us'
 
 //Middleware Admin Route
 Route::group(['middleware'=>'admin'], function(){
-  Route::get('admin/dashboard/insert-product', [AdminDashboardController::class, 'insertProduct'])->name('insert-product');
-  Route::get('admin/dashboard/insert-category', [AdminDashboardController::class, 'insertCategory'])->name('insert-category');
+  Route::get('admin/dashboard/insert-product', [AdminDashboardController::class, 'insertProduct'])->name('view-insert-product');
+  Route::get('admin/dashboard/insert-category', [AdminDashboardController::class, 'insertCategory'])->name('view-insert-category');
+  Route::post('admin/dashboard/insert-category', [CategoryController::class, 'createCategory'])->name('insert-category');
 });
 
 //Route Home

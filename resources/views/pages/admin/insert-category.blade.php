@@ -4,23 +4,29 @@
 
 @section('main-content')
     <div id="existing_categories_list">
-        <p>Country</p>
-        <p>Dubstep</p>
-        <p>Electro</p>
+        @foreach ($categories as $category)
+        <p>{{$category->category_name}}</p>
+        @endforeach
     </div>
 
     <h3 id="insert_form_header" class="text-black">Add New Category</h3>
 
-    <form action="" id="insert_form">
+    <form action="{{Route('insert-category')}}" method="POST" id="insert_form">
+        @csrf
         <div class="form-group row">
             <label for="product_name" class="col-sm-2 col-form-label">Category Name</label>
-            <input type="text" class="form-control col-sm-10" id="product_name">
+            <input type="text" class="form-control col-sm-10" id="product_name" name="category_name">
         </div>
 
         <div id="insert_cancel_btns_container">
             <button type="submit" class="btn blue-btn">Insert</button>
-            <button type="button" class="btn red-btn">Cancel</button>
         </div>
+
+        @error('category_name')
+            <div class="text-danger">
+                {{ $message }}
+            </div>
+        @enderror
     </form>
 
     {{-- error message --}}
