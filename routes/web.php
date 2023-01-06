@@ -55,3 +55,8 @@ Route::get('/checkout', function() {
 Route::get('/transactions', function() {
   return view('pages.transactions');
 });
+
+// ini buat testing
+Route::get('/test', function() {
+  return view('pages.test');
+});

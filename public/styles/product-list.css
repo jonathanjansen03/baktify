@@ -41,7 +41,11 @@
 
 .product-container hr {
     height: 1rem;
-    width: 80%;
+    width: 90%;
+}
+
+.product-info {
+    cursor: pointer;
 }
 
 .product-btns-container {

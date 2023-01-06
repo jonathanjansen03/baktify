@@ -21,12 +21,15 @@
         @foreach ($products as $product)
         <div class="product-container">
             <div class="product-wrapper grey-shadow text-center">
-                <img src="{{asset('storage/image/'.$product->product_img)}}" alt="Product">
-                <div class="text-black font-weight-bold">{{$product->product_name}}</div>
-                <div>IDR {{$product->product_price}}</div>
-                <div class="product-category mx-auto">{{$product->category->category_name}}</div>
+                <div class="product-info" onclick="location.href='{{ route('product-detail') }}'">
+                    <img src="{{asset('storage/image/'.$product->product_img)}}" alt="Product">
+                    <div class="text-black font-weight-bold">{{$product->product_name}}</div>
+                    <div>IDR {{$product->product_price}}</div>
+                    <div class="product-category mx-auto">{{$product->category->category_name}}</div>
+                </div>
     
                 <hr class="mx-auto">
+
                 @if(Auth::check() && Auth::user()->role=="admin")
                     <div class="product-btns-container text-left">
                         <button type="submit" class="btn blue-btn" onclick="location.href='{{ route('view-update-product', $product->id) }}'">Edit Product</button>
