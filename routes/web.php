@@ -39,6 +39,11 @@ Route::get('/user-profile', function() {
   return view('pages.user-profile');
 })->name('view-profile');
 
+// mungkin ini nanti bisa diganti /{user id atau username}/update
+Route::get('/update-profile', function() {
+  return view('pages.update-profile');
+});
+
 Route::get('/cart', function() {
   return view('pages.cart');
 });
