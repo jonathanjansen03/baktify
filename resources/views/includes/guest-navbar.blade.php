@@ -11,7 +11,7 @@
 				<a class="nav-link text-black" href="{{Route('about-us')}}">About us</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-black" href="{{Route('product-detail')}}">Products</a>
+				<a class="nav-link text-black" href="{{Route('product-list')}}">Products</a>
 			</li>
 		</ul>
 		<form class="form-inline">
