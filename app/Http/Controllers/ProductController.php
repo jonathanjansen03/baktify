@@ -11,14 +11,14 @@ class ProductController extends Controller
     public function productList(Request $request){
         $products = null;
         if($request->has('product_search')){
-            $products = Product::where('product_name','LIKE','%'.$request->product_search.'%' ,'OR','product_description','LIKE','%'.$request->product_search.'%')->paginate(3);
+            $products = Product::where('product_description','LIKE','%'.$request->product_search.'%')->orWhere('product_name','LIKE','%'.$request->product_search.'%')->paginate(12);
+            if(count($products)== 0){
+                return back()->with('error','No Product Match for '.$request->product_search);
+            }
         }else{
-            $products = Product::paginate(3);
+            $products = Product::paginate(12);
         }
-        if(count($products)== 0){
-            return back()->with('error','No Product Match for '.$request->product_search);
-        }
-        else return view('pages.home.product-list', compact('products'));
+        return view('pages.home.product-list', compact('products'));
     }
 
     public function createProduct(Request $request){
