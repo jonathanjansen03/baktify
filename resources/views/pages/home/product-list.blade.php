@@ -5,8 +5,8 @@
 @section('main-content')
     <div id="product_list_header">
         <h3 class="text-black font-weight-bold">OUR PRODUCTS</h3>
-        <form action="" class="form-inline">
-            <input type="text" name="search_product" id="search_product" class="form-control" placeholder="Search product">
+        <form action="/products" class="form-inline" method="GET">
+            <input type="text" name="product_search" id="product_search" class="form-control" placeholder="Search product">
             <button type="submit" class="btn purple-btn">Search</button>
             @if(Auth::check() && Auth::user()->role=="admin")
                 <button type="button" id="insert_product_btn" class="btn blue-btn" onclick="location.href='{{ route('view-insert-product') }}'">Insert Product</button>
@@ -15,8 +15,10 @@
     </div>
 
     {{-- kalo product not found --}}
-    {{-- <p id="product_not_found_message" class="text-black">No product match for 'bluerock'</p> --}}
 
+    @if(session()->has('error'))
+       <p id="product_not_found_message" class="text-black">{{ session()->get('error') }}</p>
+    @else
     <div id="product_list_container">
         @foreach ($products as $product)
         <div class="product-container">
@@ -49,18 +51,15 @@
         @endforeach
     </div>
  
-
     <div class="pagination-container">
         <div class="pagination-results">
             <p class="text-black">
-                Showing <b class="text-black">1</b> to <b class="text-black">12</b> of <b class="text-black">13</b> results
+                Showing <b class="text-black">{{$products->firstItem()}}</b> to <b class="text-black">{{$products->lastItem()}}</b> of <b class="text-black">{{$products->total()}}</b> results
             </p>
         </div>
         <div class="pages-btn">
-            <button type="button" class="btn">&lt;</button>
-            <button type="button" class="btn">1</button>
-            <button type="button" class="btn">2</button>
-            <button type="button" class="btn">&gt;</button>
+            {{$products->links()}}
         </div>
     </div>
+    @endif
 @endsection

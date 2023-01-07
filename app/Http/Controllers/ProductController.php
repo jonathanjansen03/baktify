@@ -8,9 +8,17 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    public function productList(){
-        $products = Product::all();
-        return view('pages.product-list', compact('products'));
+    public function productList(Request $request){
+        $products = null;
+        if($request->has('product_search')){
+            $products = Product::where('product_name','LIKE','%'.$request->product_search.'%' ,'OR','product_description','LIKE','%'.$request->product_search.'%')->paginate(3);
+        }else{
+            $products = Product::paginate(3);
+        }
+        if(count($products)== 0){
+            return back()->with('error','No Product Match for '.$request->product_search);
+        }
+        else return view('pages.home.product-list', compact('products'));
     }
 
     public function createProduct(Request $request){

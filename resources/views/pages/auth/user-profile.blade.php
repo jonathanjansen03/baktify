@@ -17,8 +17,7 @@
 				<label for="user_email">Email Address</label>
 				<input type="text" name="user_email" id="user_email" class="form-control" value="{{ Auth::user()->email }}">
 			</div>
-
-			{{-- kalo di soal disuruhnya itu dummy password, ga ngerti maksudnya itu harus random tiap kali reload atau semuanya pake fake password yang sama --}}
+			
 			<div class="form-group">
 				<label for="user_password">Password</label>
 				<input type="password" name="" id="user_password" class="form-control" value="dummypassword">
@@ -37,7 +36,7 @@
 		</fieldset>
 		
 		<div id="profile_btns_container">
-			<button type="button" class="btn purple-btn">Update</button>
+			<button type="button" class="btn purple-btn" onclick="location.href='{{ route('view-update-profile') }}'">Update</button>
 			<button type="button" class="btn red-btn" onclick="location.href='{{ route('logout') }}'">Sign Out</button>
 		</div>
     </form>

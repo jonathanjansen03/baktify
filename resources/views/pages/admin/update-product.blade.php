@@ -54,7 +54,7 @@
 
         <div id="insert_cancel_btns_container">
             <button type="submit" class="btn blue-btn">Insert</button>
-            <button type="button" class="btn red-btn">Cancel</button>
+            <button type="button" class="btn red-btn" onclick="location.href='{{ route('product-list') }}'">Cancel</button>
         </div>
 
     </form>
