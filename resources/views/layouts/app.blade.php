@@ -20,7 +20,7 @@
         @include('includes.guest-navbar')
     @endif
 
-    <div id="main_content" class="container-fluid mh-100 d-flex flex-column">
+    <div id="main_content" class="container-fluid min-vh-100 d-flex flex-column">
         @yield('main-content')
     </div>
     

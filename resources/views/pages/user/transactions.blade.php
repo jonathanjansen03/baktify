@@ -52,7 +52,7 @@
             </fieldset>
         </form>
 
-        <div class="transaction-details-wrapper">
+        <div class="transaction-details-wrapper text-right">
             <h5 class="text-black">Transaction Date: 2022-05-29 15:56:43</h5>
             <h5 class="text-black">Total: IDR 1540000</h5>
             <h5 class="text-black">Shipped to: address</h5>
@@ -107,7 +107,7 @@
             </fieldset>
         </form>
 
-        <div class="transaction-details-wrapper">
+        <div class="transaction-details-wrapper text-right">
             <h5 class="text-black">Transaction Date: 2022-05-29 15:56:43</h5>
             <h5 class="text-black">Total: IDR 1540000</h5>
             <h5 class="text-black">Shipped to: address</h5>

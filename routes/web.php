@@ -46,5 +46,5 @@ Route::patch('user/profile/update', [ProfileController::class, 'updateProfile'])
 
 // testing route
 Route::get('/test', function() {
-  return view('pages.test');
+  return view('pages.test.test');
 });

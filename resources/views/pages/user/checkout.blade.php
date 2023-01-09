@@ -49,9 +49,11 @@
         </fieldset>
     </form>
 
-    <form action="" id="checkout_form">
-        <p><b class="text-black">Total: IDR 1540000</b></p>
+    <div id="transaction_details" class="d-flex justify-content-between">
         <p class="text-black">Ship to: address</p>
+        <p><b class="text-black">Total: IDR 1540000</b></p>
+    </div>
+    <form action="" id="checkout_form" class="d-flex flex-column align-items-end">
         <div class="form-group">
             <label for="checkout_code" class="text-black">Please enter the following passcode to checkout: 5Q9EN9</label>
             <input type="text" name="checkout_code" id="checkout_code" class="form-control" placeholder="XXXXXX">
