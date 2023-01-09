@@ -25,8 +25,12 @@ Route::group(['middleware'=>'admin'], function(){
     Route::get('admin/edit-product/{id}', [AdminDashboardController::class, 'editProduct'])->name('view-update-product');
     Route::patch('admin/edit-product/{id}', [ProductController::class, 'updateProduct'])->name('update-product');
     Route::delete('admin/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
-  
 });
+
+//user routes
+Route::get('user/cart', [UserDashboardController::class, 'viewCart'])->name('view-cart');
+Route::get('user/checkout', [UserDashboardController::class, 'viewCheckOut'])->name('view-checkout');
+Route::get('user/transaction', [UserDashboardController::class, 'viewTransaction'])->name('view-transaction');
 
 // auth routes
 Route::get('sign-up', [RegisterController::class, 'index'])->name('signup');
@@ -38,17 +42,7 @@ Route::get('user/profile', [ProfileController::class, 'viewProfile'])->name('vie
 Route::get('user/profile/update', [ProfileController::class, 'viewUpdateProfile'])->name('view-update-profile');
 Route::patch('user/profile/update', [ProfileController::class, 'updateProfile'])->name('update-profile');
 
-Route::get('/cart', function() {
-    return view('pages.user.cart');
-});
 
-Route::get('/checkout', function() {
-    return view('pages.user.checkout');
-});
-
-Route::get('/transactions', function() {
-    return view('pages.user.transactions');
-});
 
 // testing route
 Route::get('/test', function() {

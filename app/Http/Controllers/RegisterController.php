@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -32,7 +33,14 @@ class RegisterController extends Controller
 
         $user->save();
 
-        return redirect('/');
+        $transaction = new Transaction();
+        $transaction->user_id = $user->id;
+        $transaction->is_finished = false;
+        $transaction->total_price = 0;
+
+        $transaction->save();
+
+        return redirect('/sign-in')->with('alert', "Register Succesful!");
 
     }
 }

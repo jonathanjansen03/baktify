@@ -57,7 +57,7 @@
     </form>
 
     {{-- kalo ga butuh form nanti dikeluarin aja --}}
-    <form action="" id="checkout_form">
+    <form action="{{Route('view-checkout')}}" id="checkout_form">
         <p><b class="text-black">Total: IDR 1540000</b></p>
         <button type="submit" class="btn purple-btn">Checkout</button>
     </form>

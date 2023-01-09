@@ -33,5 +33,11 @@ class DatabaseSeeder extends Seeder
             'address' => 'jalan krakatau no 8',
             'phone' => 222222222222
         ]);
+
+        DB::table('transactions')->insert([
+            'user_id' => 2,
+            'is_finished' => 0,
+            'total_price' => 0
+        ]);
     }
 }

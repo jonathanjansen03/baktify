@@ -14,11 +14,11 @@
 				<a class="nav-link text-black" href="{{Route('product-list')}}">Products</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-black" href="">My Transaction</a>
+				<a class="nav-link text-black" href="{{Route('view-transaction')}}">My Transaction</a>
 			</li>
 		</ul>
 		<form class="form-inline">
-			<a href="" class=" nav-link text-black">Cart</a>
+			<a href="{{Route('view-cart')}}" class=" nav-link text-black">Cart</a>
 			<div id="navbar_profile" class="d-flex flex-column">
 				{{-- ini nanti diganti jadi nama member --}}
 				<span>member</span>

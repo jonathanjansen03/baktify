@@ -20,8 +20,9 @@ class CreateTransactionsTable extends Migration
                 ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->date('transaction_date')->useCurrent();
+            $table->date('transaction_date')->nullable();
             $table->boolean('is_finished');
+            $table->integer('total_price');
             $table->timestamps();
         });
     }
