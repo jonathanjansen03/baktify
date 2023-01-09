@@ -10,6 +10,6 @@ class Transaction extends Model
     use HasFactory;
     
     public function carts() {
-        return $this->hasMany(Cart::class);
+        return $this->hasMany(ProductCart::class);
     }
 }

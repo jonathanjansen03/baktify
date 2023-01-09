@@ -23,6 +23,7 @@ class CreateTransactionsTable extends Migration
             $table->date('transaction_date')->nullable();
             $table->boolean('is_finished');
             $table->integer('total_price');
+            $table->string('checkout_token')->nullable();
             $table->timestamps();
         });
     }

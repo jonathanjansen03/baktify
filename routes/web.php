@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -30,7 +31,10 @@ Route::group(['middleware'=>'admin'], function(){
 //user routes
 Route::get('user/cart', [UserDashboardController::class, 'viewCart'])->name('view-cart');
 Route::get('user/checkout', [UserDashboardController::class, 'viewCheckOut'])->name('view-checkout');
-Route::get('user/transaction', [UserDashboardController::class, 'viewTransaction'])->name('view-transaction');
+Route::get('user/transwaction', [UserDashboardController::class, 'viewTransaction'])->name('view-transaction');
+Route::post('user/addtocart/{id}', [CartController::class, 'addToCart'])->name('add-to-cart');
+Route::patch('user/updatecart/{id}', [CartController::class, 'updateCart'])->name('update-cart');
+Route::patch('user/checkout/', [CartController::class, 'checkoutCart'])->name('checkout-cart');
 
 // auth routes
 Route::get('sign-up', [RegisterController::class, 'index'])->name('signup');

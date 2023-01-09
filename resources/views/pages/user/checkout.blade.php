@@ -17,32 +17,18 @@
                 </thead>
     
                 <tbody>
+                    @foreach ($transaction->carts as $cart)
+                        
+                    @endforeach
                     <tr class="gray-shadow">
                         <td class="d-flex align-items-center border-0 align-middle">
                             <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product image" class="rounded-circle">
-                            <p class="text-black mb-0 ml-3">Come on Over</p>
+                            <p class="text-black mb-0 ml-3">{{$cart->product_name}}</p>
                         </td>
-                        <td class="text-black border-0 align-middle">IDR 85000</td>
-                        <td class="border-0 align-middle"><input type="text" name="product_qty" id="product_qty" value="1" class="text-black"></td>
-                        <td class="text-black border-0 align-middle">IDR 340000</td>
-                    </tr>
-                    <tr class="gray-shadow">
-                        <td class="d-flex align-items-center border-0 align-middle">
-                            <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product image" class="rounded-circle">
-                            <p class="text-black mb-0 ml-3">Come on Over</p>
-                        </td>
-                        <td class="text-black border-0 align-middle">IDR 85000</td>
-                        <td class="border-0 align-middle"><input type="text" name="product_qty" id="product_qty" value="1" class="text-black"></td>
-                        <td class="text-black border-0 align-middle">IDR 340000</td>
-                    </tr>
-                    <tr class="gray-shadow">
-                        <td class="d-flex align-items-center border-0 align-middle">
-                            <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1594354844764-AS3MIE2RV9MAWWFK4RHA/Shania+Twain+Come+On+Over+Album+Cover+International+Version.jpg" alt="Product image" class="rounded-circle">
-                            <p class="text-black mb-0 ml-3">Come on Over</p>
-                        </td>
-                        <td class="text-black border-0 align-middle">IDR 85000</td>
-                        <td class="border-0 align-middle"><input type="text" name="product_qty" id="product_qty" value="1" class="text-black"></td>
-                        <td class="text-black border-0 align-middle">IDR 340000</td>
+                        <td class="text-black border-0 align-middle">IDR {{$cart->product_price}}</td>
+                        <td class="border-0 align-middle"><input type="text" name="product_qty" id="product_qty" value="{{$cart->product_qty}}" class="text-black"></td>
+                        <td class="text-black border-0 align-middle">IDR {{$cart->product_subtotal}}</td>
+                       
                     </tr>
                 </tbody>
             </table>
@@ -53,11 +39,16 @@
         <p class="text-black">Ship to: address</p>
         <p><b class="text-black">Total: IDR 1540000</b></p>
     </div>
-    <form action="" id="checkout_form" class="d-flex flex-column align-items-end">
+    <form action="{{Route('checkout-cart')}}" id="checkout_form" class="d-flex flex-column align-items-end" method="POST">
+        @csrf
+        @method('PATCH')
         <div class="form-group">
-            <label for="checkout_code" class="text-black">Please enter the following passcode to checkout: 5Q9EN9</label>
-            <input type="text" name="checkout_code" id="checkout_code" class="form-control" placeholder="XXXXXX">
+            <label for="checkout_code" class="text-black">Please enter the following passcode to checkout: {{$transaction->checkout_token}}</label>
+            <input type="text" name="checkout_token" id="checkout_code" class="form-control" placeholder="XXXXXX">
         </div>
+        @if(session()->has('error'))
+            <p id="product_not_found_message" class="text-danger">{{ session()->get('error') }}</p>
+        @endif
         <button type="submit" class="btn purple-btn">Confirm</button>
     </form>
 @endsection
