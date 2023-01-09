@@ -10,25 +10,25 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserDashboardController;
 
-// general route
+// general routes
 Route::get('/', [HomeController::class, 'viewIndex'])->name('home');
 Route::get('/about-us', [HomeController::class, 'viewAboutUs'])->name('about-us');
 Route::get('/product-detail', [HomeController::class, 'viewProducts'])->name('product-detail');
 Route::get('/products', [ProductController::class, 'productList'])->name('product-list');
 
-//Middleware Admin Route
+// middleware admin routes
 Route::group(['middleware'=>'admin'], function(){
-  Route::get('admin/insert-product', [AdminDashboardController::class, 'insertProduct'])->name('view-insert-product');
-  Route::post('admin/insert-product', [ProductController::class, 'createProduct'])->name('insert-product');
-  Route::get('admin/insert-category', [AdminDashboardController::class, 'insertCategory'])->name('view-insert-category');
-  Route::post('admin/insert-category', [CategoryController::class, 'createCategory'])->name('insert-category');
-  Route::get('admin/edit-product/{id}', [AdminDashboardController::class, 'editProduct'])->name('view-update-product');
-  Route::patch('admin/edit-product/{id}', [ProductController::class, 'updateProduct'])->name('update-product');
-  Route::delete('admin/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
+    Route::get('admin/insert-product', [AdminDashboardController::class, 'insertProduct'])->name('view-insert-product');
+    Route::post('admin/insert-product', [ProductController::class, 'createProduct'])->name('insert-product');
+    Route::get('admin/insert-category', [AdminDashboardController::class, 'insertCategory'])->name('view-insert-category');
+    Route::post('admin/insert-category', [CategoryController::class, 'createCategory'])->name('insert-category');
+    Route::get('admin/edit-product/{id}', [AdminDashboardController::class, 'editProduct'])->name('view-update-product');
+    Route::patch('admin/edit-product/{id}', [ProductController::class, 'updateProduct'])->name('update-product');
+    Route::delete('admin/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
   
 });
 
-// Route Auth
+// auth routes
 Route::get('sign-up', [RegisterController::class, 'index'])->name('signup');
 Route::get('sign-up/user', [RegisterController::class, 'register'])->name('register');
 Route::get('sign-in', [LoginController::class, 'index'])->name('signin');
@@ -38,25 +38,19 @@ Route::get('user/profile', [ProfileController::class, 'viewProfile'])->name('vie
 Route::get('user/profile/update', [ProfileController::class, 'viewUpdateProfile'])->name('view-update-profile');
 Route::patch('user/profile/update', [ProfileController::class, 'updateProfile'])->name('update-profile');
 
-// mungkin ini nanti bisa diganti user id atau username
-
-
-// mungkin ini nanti bisa diganti /{user id atau username}/update
-
-
 Route::get('/cart', function() {
-  return view('pages.cart');
+    return view('pages.user.cart');
 });
 
 Route::get('/checkout', function() {
-  return view('pages.checkout');
+    return view('pages.user.checkout');
 });
 
 Route::get('/transactions', function() {
-  return view('pages.transactions');
+    return view('pages.user.transactions');
 });
 
-// ini buat testing
+// testing route
 Route::get('/test', function() {
   return view('pages.test');
 });

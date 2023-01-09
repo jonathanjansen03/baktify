@@ -1,6 +1,6 @@
-<nav id="member_navbar" class="navbar navbar-expand-lg navbar-light">
+<nav id="member_navbar" class="navbar navbar-expand-lg navbar-light mb-5">
 	<a class="navbar-brand" href="{{Route('home')}}">
-		<img src="{{ asset('images/logo.png') }}" alt="logo" id="logo">
+		<img src="{{ asset('images/logo.png') }}" alt="Logo" id="logo">
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -19,10 +19,10 @@
 		</ul>
 		<form class="form-inline">
 			<a href="" class=" nav-link text-black">Cart</a>
-			<div id="navbar_profile">
+			<div id="navbar_profile" class="d-flex flex-column">
 				{{-- ini nanti diganti jadi nama member --}}
 				<span>member</span>
-				<a href="{{Route('view-profile')}}">View profile</a>
+				<a href="{{ Route('view-profile') }}" class="text-secondary text-decoration-none">View profile</a>
 			</div>
 		</form>
 	</div>

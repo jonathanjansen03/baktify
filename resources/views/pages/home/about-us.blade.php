@@ -3,13 +3,13 @@
 @section('title', 'About Us')
 @section('main-content')
     <div id="about_us_quote">
-        <p class="text-center">
+        <p class="text-center pt-5 pb-0 px-5">
             "Baktify started from our love for music and album, we created Baktify to spread the love in out music community. We started off from a street near Rawa Belong street and now we have the most diverse collection of albums and musics. We won't stop until music spreads all over the world!"
         </p>
         <h6 class="text-center text-black">Conny Blue, CEO Baktify</h6>
     </div>
 
-    <hr class="gradient-hr">
+    <hr class="gradient-hr mx-5 mb-5">
 
     <div class="about-us-table">
         <div class="row">

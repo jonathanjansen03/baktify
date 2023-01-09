@@ -3,15 +3,15 @@
 @section('title', 'Add Category')
 
 @section('main-content')
-    <div id="existing_categories_list">
+    <div id="existing_categories_list" class="d-flex mb-3">
         @foreach ($categories as $category)
-        <p>{{$category->category_name}}</p>
+            <p class="text-white rounded-lg mr-3 py-2 px-3">{{$category->category_name}}</p>
         @endforeach
     </div>
 
-    <h3 id="insert_form_header" class="text-black">Add New Category</h3>
+    <h3 id="insert_form_header" class="text-black mb-4">Add New Category</h3>
 
-    <form action="{{Route('insert-category')}}" method="POST" id="insert_form">
+    <form action="{{ Route('insert-category') }}" method="POST" id="insert_form">
         @csrf
         <div class="form-group row">
             <label for="product_name" class="col-sm-2 col-form-label">Category Name</label>
@@ -23,11 +23,9 @@
         </div>
     </form>
 
-    {{-- error message --}}
     @error('category_name')
-    <div class="alert alert-danger">
-        The name field is required.
-    </div>
-
+        <div class="alert alert-danger mt-4">
+            The name field is required.
+        </div>
     @enderror
 @endsection

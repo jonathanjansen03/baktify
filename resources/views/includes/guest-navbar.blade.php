@@ -1,6 +1,6 @@
-<nav id="guest_navbar" class="navbar navbar-expand-lg navbar-light grey-shadow">
+<nav id="guest_navbar" class="navbar navbar-expand-lg navbar-light gray-shadow mb-5">
 	<a class="navbar-brand" href="{{Route('home')}}">
-		<img src="{{ asset('images/logo.png') }}" alt="logo" id="logo">
+		<img src="{{ asset('images/logo.png') }}" alt="Logo" id="logo">
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -15,8 +15,8 @@
 			</li>
 		</ul>
 		<form class="form-inline">
-			<button type="button" id="sign_in_btn" class="btn" onclick="location.href='{{ route('signin') }}'">Sign In</button>
-			<button type="button" id="sign_up_btn" class="btn purple-btn" onclick="location.href='{{ route('signup') }}'">Sign Up</button>
+			<button type="button" id="sign_in_btn" class="btn pl-0" onclick="location.href='{{ route('signin') }}'">Sign In</button>
+			<button type="button" id="sign_up_btn" class="btn purple-btn rounded-pill" onclick="location.href='{{ route('signup') }}'">Sign Up</button>
 		</form>
 	</div>
 </nav>

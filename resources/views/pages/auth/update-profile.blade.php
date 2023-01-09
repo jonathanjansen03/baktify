@@ -5,7 +5,7 @@
 @section('main-content')
 	<h3 class="text-black text-center">Update Profile</h3>
 
-	<form action="{{Route('update-profile')}}" id="user_profile_container" class="grey-shadow mx-auto" method="POST">
+	<form action="{{Route('update-profile')}}" id="user_profile_container" class="gray-shadow mx-auto" method="POST">
 		@csrf
 		@method('patch')
 		<div class="form-group">

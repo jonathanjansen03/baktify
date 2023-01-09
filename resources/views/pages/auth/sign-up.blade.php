@@ -4,7 +4,7 @@
 @section('main-content')
     <h2 class="text-center text-black font-weight-bold">Create your account</h2>
     
-    <div id="sign_up_form" class="form-group mx-auto grey-shadow">
+    <div id="sign_up_form" class="form-group mx-auto gray-shadow rounded-lg p-4 mt-4 mb-5">
         <form action="{{ Route('register') }}" method="GET">
             <div class="form-group">
                 <label for="sign_up_name" class="text-black">Name</label>
@@ -69,7 +69,7 @@
                 @enderror
             </div>
 
-            <button type="submit" id="create_account_btn" class="btn purple-btn">Create Account</button>
+            <button type="submit" id="create_account_btn" class="btn purple-btn w-100 mt-3">Create Account</button>
         </form>
     </div>
 @endsection

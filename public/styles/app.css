@@ -4,35 +4,23 @@
 
 * {
     box-sizing: border-box;
-    color: gray;
+    color: #6c757d;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
 }
 
-nav {
-    margin-bottom: 4rem;
+table {
+    border-collapse: separate;
+    border-spacing: 0 2rem;
 }
 
-footer {
-    margin-top: 2rem;
-}
-
-footer p {
-    margin-bottom: 0;
-    padding: 2rem 0;
+caption {
+    caption-side: top;
 }
 
 #logo {
     width: 3rem;
-}
-
-#sign_up_btn {
-    border-radius: 2rem;
-}
-
-#sign_in_btn {
-    padding-left: 0;
 }
 
 #sign_in_btn:hover,
@@ -47,17 +35,87 @@ footer p {
     margin-left: 5rem;
 }
 
-#admin_navbar #mainNavbar {
-    margin-left: 2rem;
+#hr_text .gradient-hr,
+#about_us_quote + hr {
+    margin-top: 5rem;
 }
 
-#navbar_profile {
-    display: flex;
-    flex-direction: column;
+#songs_container {
+    border-radius: 1rem;
+    display: grid;
+    grid-auto-columns: 10rem;
+    grid-row-gap: 1rem;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    justify-items: center;
+    margin: 10rem 15% 0;
+    padding: 1rem 0.5rem;
 }
 
-#main_content {
-    min-height: 100vh;
+#songs_container a,
+#songs_container img {
+    height: 7rem;
+    width: 5rem;
+}
+
+#about_us_quote p {
+    font-size: 1.2rem;
+}
+
+#sign_in_form,
+#sign_up_form {
+    width: 35%;
+}
+
+#or_line {
+    line-height: 0;
+}
+
+#product_list_header,
+#product_list_container,
+#product_not_found_message {
+    margin: 0 5rem;
+}
+
+#product-detail-container img {
+    height: 20rem;
+}
+
+#insert_form_header {
+    margin: 0 5rem;
+}
+
+#insert_form {
+    padding: 0 5rem;
+}
+
+#existing_categories_list {
+    margin: 0 5rem;
+}
+
+#existing_categories_list p {
+    background-color: #6857ff;
+}
+
+#insert_form + .alert {
+    margin: 0rem 5rem;
+}
+
+#user_cart {
+    width: 90%;
+}
+
+#user_cart img {
+    height: 5rem;
+}
+
+#empty_cart_message,
+#checkout_form,
+.transaction-details-wrapper h5 {
+    margin-left: 5%;
+}
+
+#checkout_form input {
+    width: 6%;
 }
 
 .text-danger,
@@ -70,11 +128,6 @@ footer p {
     height: 0.05rem;
 }
 
-.form-inline a {
-    color: gray;
-    text-decoration: none;
-}
-
 .text-black {
     color: black !important;
 }
@@ -82,11 +135,6 @@ footer p {
 .form-inline button,
 .nav-link {
     font-weight: 500;
-}
-
-.container-fluid {
-    display: flex;
-    flex-direction: column;
 }
 
 .btn:focus {
@@ -130,6 +178,48 @@ footer p {
     transform: translateY(-0.1rem);
 }
 
-.grey-shadow {
+.gray-shadow {
     box-shadow: 0 0.2rem 1rem #cdcdcd;
+}
+
+.home-middle img {
+    width: 15rem;
+}
+
+.about-us-table {
+    margin-left: 15%;
+}
+
+.product-container hr {
+    height: 1rem;
+    width: 90%;
+}
+
+.product-info {
+    cursor: pointer;
+}
+
+.product-btns-container button {
+    padding: 0.2rem 0.7rem;
+}
+
+.product-wrapper img {
+    height: 10rem;
+}
+
+.product-category {
+    background-color: #887eff;
+    width: 5rem;
+}
+
+.pagination-container {
+    padding: 0 5rem;
+}
+
+.table thead th {
+    background-color: #95a5a6;
+}
+
+.transaction-container + .gradient-hr {
+    width: 90%;
 }

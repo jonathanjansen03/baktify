@@ -5,9 +5,9 @@
 @section('main-content')
     <h3 id="insert_form_header" class="text-black">{{$product->product_name}}</h3>
 
-    <img class="mx-auto mb-5"src="{{asset('storage/image/'.$product->product_img)}}" width="400" height="400">
+    <img class="mx-auto mb-5"src="{{ asset('storage/image/'.$product->product_img) }}" width="400" height="400">
 
-    <form action="{{Route('update-product', $product->id)}}" id="insert_form" method="POST" enctype="multipart/form-data">
+    <form action="{{ Route('update-product', $product->id) }}" id="insert_form" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <div class="form-group row">
@@ -27,26 +27,26 @@
 
         <div class="form-group row">
             <label for="product_price" class="col-sm-2 col-form-label">Price</label>
-            <input type="text" class="form-control col-sm-10" id="product_price" name="product_price" value="{{$product->product_price}}">
+            <input type="text" class="form-control col-sm-10" id="product_price" name="product_price" value="{{ $product->product_price }}">
         </div>
 
         <hr class="gradient-hr">
 
         <div class="form-group row">
             <label for="product_quantity" class="col-sm-2 col-form-label">Product Quantity</label>
-            <input type="text" class="form-control col-sm-10" id="product_quantity" name="product_qty" value="{{$product->product_qty}}">
+            <input type="text" class="form-control col-sm-10" id="product_quantity" name="product_qty" value="{{ $product->product_qty }}">
         </div>
         
         <hr class="gradient-hr">
 
             @error('product_description')
-                <div class="text-danger">{{$message}}</div>
+                <div class="text-danger">{{ $message }}</div>
             @enderror
             @error('product_price')
-                <div class="text-danger">{{$message}}</div>
+                <div class="text-danger">{{ $message }}</div>
             @enderror
             @error('product_qty')
-                <div class="text-danger">{{$message}}</div>
+                <div class="text-danger">{{ $message }}</div>
             @enderror
             @error('category')
                 <div class="text-danger">Please Create Category First!</div>

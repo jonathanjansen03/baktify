@@ -8,14 +8,6 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('/styles/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('/styles/home.css') }}">
-    <link rel="stylesheet" href="{{ asset('/styles/about-us.css') }}">
-    <link rel="stylesheet" href="{{ asset('/styles/register-sign-in.css') }}">
-    <link rel="stylesheet" href="{{ asset('/styles/product-detail.css') }}">
-    <link rel="stylesheet" href="{{ asset('/styles/product-list.css') }}">
-    <link rel="stylesheet" href="{{ asset('/styles/insert-product-category.css') }}">
-    <link rel="stylesheet" href="{{ asset('/styles/user-profile.css') }}">
-    <link rel="stylesheet" href="{{ asset('/styles/cart-checkout-transactions.css') }}">
 </head>
 <body>
     @if (Auth::check())
@@ -28,12 +20,12 @@
         @include('includes.guest-navbar')
     @endif
 
-    <div id="main_content" class="container-fluid">
+    <div id="main_content" class="container-fluid mh-100 d-flex flex-column">
         @yield('main-content')
     </div>
     
-    <footer class="grey-shadow">
-        <p class="text-center"> &#169; 2021 Baktify, Inc. All rights reserved.</p>
+    <footer class="gray-shadow mt-5">
+        <p class="text-center mb-0 py-4"> &#169; 2021 Baktify, Inc. All rights reserved.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -42,9 +34,9 @@
     <script>
         var msg = '{{Session::get('alert')}}';
         var exist = '{{Session::has('alert')}}';
-        if(exist){
-          alert(msg);
+        if (exist) {
+            alert(msg);
         }
-      </script>
+    </script>
 </body>
 </html>

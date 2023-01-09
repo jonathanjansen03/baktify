@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
-{{-- yang ini boleh diganti jadi nama user, atau User Profile aja gpp jg --}}
 @section('title', 'User Profile')
 
 @section('main-content')
     <h3 class="text-black text-center">Your Profile</h3>
 
-    <form action="" id="user_profile_container" class="grey-shadow mx-auto">
+    <form action="" id="user_profile_container" class="gray-shadow mx-auto w-50 p-4 mt-3 rounded-lg">
 		<fieldset disabled>
 			<div class="form-group">
 				<label for="user_name">Name</label>
@@ -36,8 +35,8 @@
 		</fieldset>
 		
 		<div id="profile_btns_container">
-			<button type="button" class="btn purple-btn" onclick="location.href='{{ route('view-update-profile') }}'">Update</button>
-			<button type="button" class="btn red-btn" onclick="location.href='{{ route('logout') }}'">Sign Out</button>
+			<button type="button" class="btn purple-btn mt-2 mr-2" onclick="location.href='{{ route('view-update-profile') }}'">Update</button>
+			<button type="button" class="btn red-btn mt-2 mr-2" onclick="location.href='{{ route('logout') }}'">Sign Out</button>
 		</div>
     </form>
 @endsection
