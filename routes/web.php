@@ -52,5 +52,5 @@ Route::get('/transactions', function() {
 
 // testing route
 Route::get('/test', function() {
-  return view('pages.test');
+  return view('pages.test.test');
 });

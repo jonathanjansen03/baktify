@@ -5,12 +5,12 @@
 @section('main-content')
 	<h3 class="text-black text-center">Update Profile</h3>
 
-	<form action="{{ Route('update-profile') }}" id="user_profile_container" class="gray-shadow mx-auto w-50 p-4 mt-3 rounded-lg" method="POST">
+	<form action="{{Route('update-profile')}}" id="user_profile_container" class="gray-shadow mx-auto w-50 p-4 mt-3 rounded-lg" method="POST">
 		@csrf
 		@method('patch')
 		<div class="form-group">
 			<label for="sign_up_name" class="text-black">Name</label>
-			<input type="text" name="name" id="sign_up_name" class="form-control" value="{{ Auth::user()->name }}">
+			<input type="text" name="name" id="sign_up_name" class="form-control" value="Username">
 			 @error('name')
 				<div class="text-danger">
 					{{ $message }}
@@ -20,7 +20,7 @@
 
 		<div class="form-group">
 			<label for="sign_up_email" class="text-black">Email address</label>
-			<input type="text" name="email" id="sign_up_email" class="form-control" value="{{ Auth::user()->email }}" readonly>
+			<input type="text" name="email" id="sign_up_email" class="form-control" value="user@gmail.com" readonly>
 			@error('email')
 				<div class="text-danger">
 					{{ $message }}
@@ -52,7 +52,7 @@
 
 		<div class="form-group">
 			<label for="sign_up_address" class="text-black">Address</label>
-			<textarea name="address" id="sign_up_address" class="form-control" aria-describedby="address_desc">{{Auth::user()->address}}</textarea>
+			<textarea name="address" id="sign_up_address" class="form-control" aria-describedby="address_desc">123 Address St.</textarea>
 			@error('address')
 				<div class="text-danger">
 					{{ $message }}
@@ -63,7 +63,7 @@
 
 		<div class="form-group">
 			<label for="sign_up_phone" class="text-black">Phone</label>
-			<input type="text" name="phone" id="sign_up_phone" class="form-control" value="{{Auth::user()->phone}}">
+			<input type="text" name="phone" id="sign_up_phone" class="form-control" value="087888888888">
 			@error('phone')
 				<div class="text-danger">
 					{{ $message }}

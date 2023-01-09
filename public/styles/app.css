@@ -110,12 +110,13 @@ caption {
 
 #empty_cart_message,
 #checkout_form,
+#transaction_details,
 .transaction-details-wrapper h5 {
     margin-left: 5%;
 }
 
-#checkout_form input {
-    width: 6%;
+#checkout_form button {
+    width: 28.7%;
 }
 
 .text-danger,
@@ -222,4 +223,8 @@ caption {
 
 .transaction-container + .gradient-hr {
     width: 90%;
+}
+
+.transaction-details-wrapper {
+    margin-right: 5%;
 }

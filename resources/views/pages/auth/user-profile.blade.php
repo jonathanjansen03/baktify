@@ -24,7 +24,7 @@
 
 			<div class="form-group">
 				<label for="user_address">Address</label>
-				<textarea name="user_address" id="user_address" class="form-control" autofocus>{{ Auth::user()->address }}</textarea>
+				<textarea name="user_address" id="user_address" class="form-control">{{ Auth::user()->address }}</textarea>
 				<small id="address_desc" class="form-text">Please write your actual address where you can receive mail.</small>
 			</div>
 
