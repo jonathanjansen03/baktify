@@ -21,6 +21,7 @@ class CreateTransactionsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->date('transaction_date')->useCurrent();
+            $table->boolean('is_finished');
             $table->timestamps();
         });
     }
