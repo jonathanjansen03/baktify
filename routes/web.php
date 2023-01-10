@@ -11,13 +11,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserDashboardController;
 
-// general routes
+//General Routes
 Route::get('/', [HomeController::class, 'viewIndex'])->name('home');
 Route::get('/about-us', [HomeController::class, 'viewAboutUs'])->name('about-us');
-Route::get('/product-detail', [HomeController::class, 'viewProducts'])->name('product-detail');
+Route::get('/product-detail/{id}', [ProductController::class, 'viewProduct'])->name('product-detail');
 Route::get('/products', [ProductController::class, 'productList'])->name('product-list');
 
-// middleware admin routes
+//Admin Middleware Routes
 Route::group(['middleware'=>'admin'], function(){
     Route::get('admin/insert-product', [AdminDashboardController::class, 'insertProduct'])->name('view-insert-product');
     Route::post('admin/insert-product', [ProductController::class, 'createProduct'])->name('insert-product');
@@ -28,24 +28,32 @@ Route::group(['middleware'=>'admin'], function(){
     Route::delete('admin/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('delete-product');
 });
 
-//user routes
-Route::get('user/cart', [UserDashboardController::class, 'viewCart'])->name('view-cart');
-Route::get('user/checkout', [UserDashboardController::class, 'viewCheckOut'])->name('view-checkout');
-Route::get('user/transwaction', [UserDashboardController::class, 'viewTransaction'])->name('view-transaction');
-Route::post('user/addtocart/{id}', [CartController::class, 'addToCart'])->name('add-to-cart');
-Route::patch('user/cart/{id}', [CartController::class, 'updateCart'])->name('update-cart');
-Route::patch('user/checkout/', [CartController::class, 'checkoutCart'])->name('checkout-cart');
+//Member Middleware Routes
+Route::group(['middleware'=>'member'], function(){
+  Route::get('user/cart', [UserDashboardController::class, 'viewCart'])->name('view-cart');
+  Route::get('user/checkout', [UserDashboardController::class, 'viewCheckOut'])->name('view-checkout');
+  Route::get('user/transwaction', [UserDashboardController::class, 'viewTransaction'])->name('view-transaction');
+  Route::post('user/addtocart/{id}', [CartController::class, 'addToCart'])->name('add-to-cart');
+  Route::patch('user/cart/{id}', [CartController::class, 'updateCart'])->name('update-cart');
+  Route::patch('user/checkout/', [CartController::class, 'checkoutCart'])->name('checkout-cart');
+});
 
-// auth routes
+
+//Only Guest Routes
+Route::group(['middleware'=>'guest'], function(){
 Route::get('sign-up', [RegisterController::class, 'index'])->name('signup');
 Route::get('sign-up/user', [RegisterController::class, 'register'])->name('register');
 Route::get('sign-in', [LoginController::class, 'index'])->name('signin');
 Route::post('sign-in', [LoginController::class, 'login'])->name('login');
-Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+});
+
+Route::group(['middleware'=>'auth'], function(){
 Route::get('user/profile', [ProfileController::class, 'viewProfile'])->name('view-profile');
 Route::get('user/profile/update', [ProfileController::class, 'viewUpdateProfile'])->name('view-update-profile');
 Route::patch('user/profile/update', [ProfileController::class, 'updateProfile'])->name('update-profile');
-
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+});
 
 
 // testing route

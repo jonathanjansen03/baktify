@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class User
+class Member
 {
     /**
      * Handle an incoming request.
@@ -16,6 +17,15 @@ class User
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(Auth::check()){
+            if(Auth::user()->role=="member"){
+                return $next($request);
+            }
+            else{
+                return redirect()->back()->with('alert', 'Only User Can Access This Page!');
+            }
+        }else{
+            return redirect(route('signin'))->with('alert', 'Please Sign In To Proceed');
+        }
     }
 }

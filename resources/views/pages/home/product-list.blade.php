@@ -24,7 +24,7 @@
         @foreach ($products as $product)
         <div class="product-container col-md-3 mb-5">
             <div class="product-wrapper gray-shadow text-center">
-                <div class="product-info" onclick="location.href='{{ route('product-detail') }}'">
+                <div class="product-info" onclick="location.href='{{ route('product-detail', $product->id)}}'">
                     <img src="{{ asset('storage/image/'.$product->product_img) }}" alt="Product">
                     <div class="text-black font-weight-bold">{{ $product->product_name }}</div>
                     <div>IDR {{ $product->product_price }}</div>

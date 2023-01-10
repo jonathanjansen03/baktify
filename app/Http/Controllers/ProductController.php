@@ -21,6 +21,10 @@ class ProductController extends Controller
         return view('pages.home.product-list', compact('products'));
     }
 
+    public function viewProduct($id){
+        $product = Product::findOrFail($id);
+        return view('pages.home.product-detail', compact('product'));
+    }
     public function createProduct(Request $request){
         $validator = Validator::make($request->all(), [
             'product_image' => 'required|mimes:jpg,png,jpeg',
