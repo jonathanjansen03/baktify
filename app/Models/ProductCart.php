@@ -9,7 +9,8 @@ class ProductCart extends Model
 {
     use HasFactory;
     protected $fillable = ['product_qty'];
+    
     public function transaction() {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Transaction::class);
      }
 }

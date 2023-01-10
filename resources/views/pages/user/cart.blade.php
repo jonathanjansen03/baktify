@@ -5,7 +5,9 @@
 @section('main-content')
     {{-- kalo cart empty --}}
     {{-- <h5 id="empty_cart_message" class="text-black">Your cart is empty.</h5> --}}
-    
+@if(count($transaction->carts)==0)
+    <caption><h5 class="text-black mb-0 ml-5">Your cart is empty</h5></caption>
+@else
     <form action="" id="cart_form">
         <table id="user_cart" class="table table-borderless mx-auto mb-0">
             <caption><h5 class="text-black mb-0">Your Cart</h5></caption>
@@ -45,7 +47,8 @@
 
     {{-- kalo ga butuh form nanti dikeluarin aja --}}
     <form action="{{Route('view-checkout')}}" id="checkout_form">
-        <p><b class="text-black">Total: IDR 1540000</b></p>
+        <p><b class="text-black">Total: IDR {{$transaction->total_price}}</b></p>
         <button type="submit" class="btn purple-btn">Checkout</button>
     </form>
+@endif
 @endsection

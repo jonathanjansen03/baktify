@@ -55,7 +55,7 @@ class ProductController extends Controller
        // dd($product);
         $product->save();
 
-        return redirect('/products');
+        return redirect(route('product-list'))->with('alert', 'Product Succesfully Inserted!');
         
     }
 

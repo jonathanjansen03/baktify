@@ -33,7 +33,7 @@ Route::get('user/cart', [UserDashboardController::class, 'viewCart'])->name('vie
 Route::get('user/checkout', [UserDashboardController::class, 'viewCheckOut'])->name('view-checkout');
 Route::get('user/transwaction', [UserDashboardController::class, 'viewTransaction'])->name('view-transaction');
 Route::post('user/addtocart/{id}', [CartController::class, 'addToCart'])->name('add-to-cart');
-Route::patch('user/updatecart/{id}', [CartController::class, 'updateCart'])->name('update-cart');
+Route::patch('user/cart/{id}', [CartController::class, 'updateCart'])->name('update-cart');
 Route::patch('user/checkout/', [CartController::class, 'checkoutCart'])->name('checkout-cart');
 
 // auth routes

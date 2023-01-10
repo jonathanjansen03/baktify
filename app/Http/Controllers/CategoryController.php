@@ -13,7 +13,7 @@ class CategoryController extends Controller
       $category = new Category();
       $category->category_name = $request->category_name;
       $category->save();
-      return redirect()->back();
+      return redirect()->back()->with('alert', 'Category Succesfully Created!');
    }
 
    

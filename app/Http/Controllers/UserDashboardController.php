@@ -31,6 +31,7 @@ class UserDashboardController extends Controller
    }
 
    public function viewTransaction(){
-    return view('pages.user.transactions');
+      $transactions = Transaction::all()->where('user_id', 'LIKE', Auth::user()->id)->where('is_finished', 'LIKE', 1); 
+    return view('pages.user.transactions', compact('transactions'));
    }
 }
