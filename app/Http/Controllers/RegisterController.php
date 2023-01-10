@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    public function index(){
+    public function index() {
         return view('pages.auth.sign-up');
     }
 
-    public function register(Request $request){
+    public function register(Request $request) {
         $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users',
@@ -40,7 +40,7 @@ class RegisterController extends Controller
 
         $transaction->save();
 
-        return redirect('/sign-in')->with('alert', "Register Succesful!");
+        return redirect('/sign-in')->with('alert', "Register Successful!");
 
     }
 }

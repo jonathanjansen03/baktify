@@ -7,7 +7,7 @@
 
     <img class="mx-auto mb-5"src="{{ asset('storage/image/'.$product->product_img) }}" width="400" height="400">
 
-    <form action="{{ Route('update-product', $product->id) }}" id="insert_form" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('update-product', $product->id) }}" id="insert_form" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <div class="form-group row">
@@ -38,7 +38,7 @@
         </div>
         
         <hr class="gradient-hr">
-        @if($errors->any())
+        @if ($errors->any())
         <div class="alert alert-danger mt-4">
             @error('product_description')
                 <div class="text-danger">{{ $message }}</div>

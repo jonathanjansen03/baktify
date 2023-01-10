@@ -8,21 +8,21 @@ use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
 {
-    public function manageProduct(){
+    public function manageProduct() {
         return view('pages.product-list');
     }
 
-    public function insertProduct(){
+    public function insertProduct() {
         $categories = Category::all();
         return view('pages.admin.insert-product', compact('categories'));
     }
 
-    public function insertCategory(){
+    public function insertCategory() {
         $categories = Category::all();
         return view('pages.admin.insert-category',compact('categories'));
     }
 
-    public function editProduct($id){
+    public function editProduct($id) {
         $product = Product::findOrFail($id);
         return view('pages.admin.update-product', compact('product'));
     }

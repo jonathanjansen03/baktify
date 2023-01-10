@@ -13,11 +13,11 @@ use function Ramsey\Uuid\v1;
 
 class CartController extends Controller
 {
-    public function addToCart($id){
+    public function addToCart($id) {
        $transaction = Transaction::all()->where('user_id', 'LIKE', Auth::user()->id)->where('is_finished', 'LIKE', 0)->first();
        $product_cart = ProductCart::all()->where('product_id', 'LIKE', $id)->where('user_id', 'LIKE', Auth::user()->id)->where('transaction_id', 'LIKE', $transaction->id);
        $product = Product::findOrFail($id);
-       if(count($product_cart)==0){
+       if (count($product_cart) == 0) {
         $product_cart = new ProductCart();
         $product_cart->product_id = $id;
         $product_cart->transaction_id = $transaction->id;
@@ -29,12 +29,11 @@ class CartController extends Controller
         $product_cart->product_subtotal = $product_cart->product_qty*$product->product_price;
         $product_cart->save();
         
-       }else{
+       } else {
         //qty > stock
-         if(($product_cart->first()->product_qty + 1) > $product->product_qty){
-
+         if (($product_cart->first()->product_qty + 1) > $product->product_qty) {
             return back()->with('alert', 'You have reached maximum quantity of this item!');
-         }else{
+         } else {
             $product_cart->first()->product_qty = $product_cart->first()->product_qty + 1;
             $product_cart->first()->product_subtotal = $product_cart->first()->product_qty * $product->product_price;
             $product_cart->first()->save();
@@ -42,7 +41,7 @@ class CartController extends Controller
        }
 
        $total_price = 0;
-       foreach($transaction->carts as $cart){
+       foreach($transaction->carts as $cart) {
         $total_price += $cart->product_subtotal;
        }
 
@@ -53,20 +52,20 @@ class CartController extends Controller
        
     }
 
-    public function updateCart(Request $request, $id){
+    public function updateCart(Request $request, $id) {
         $transaction = Transaction::all()->where('user_id', 'LIKE', Auth::user()->id)->where('is_finished', 'LIKE', 0)->first();
         $product_cart = ProductCart::findOrFail($id);
         $product = Product::findOrFail($product_cart->product_id);
-        if($request->qty > $product->product_qty){
+        if ($request->qty > $product->product_qty) {
             return back()->with('alert', 'You haved entered larger amount! Stock Left : '.$product->product_qty);
-        }else if($request->qty==0){
+        } else if ($request->qty == 0) {
             ProductCart::destroy($id);
-        }else{
+        } else {
             $product_cart->product_qty = $request->qty;
             $product_cart->product_subtotal = $request->qty * $product->product_price;
             $product_cart->save();
             $total_price = 0;
-            foreach($transaction->carts as $cart){
+            foreach($transaction->carts as $cart) {
              $total_price += $cart->product_subtotal;
             }
             $transaction->total_price = $total_price;
@@ -77,11 +76,11 @@ class CartController extends Controller
 
     }
 
-    public function checkoutCart(Request $request){
+    public function checkoutCart(Request $request) {
         $transaction = Transaction::all()->where('user_id', 'LIKE', Auth::user()->id)->where('is_finished', 'LIKE', 0)->first();
-        if($transaction->checkout_token==$request->checkout_token){
+        if ($transaction->checkout_token==$request->checkout_token) {
             //kurangin stock
-            foreach($transaction->carts as $cart){
+            foreach($transaction->carts as $cart) {
                 $product = Product::findOrFail($cart->product_id);
                 $product->product_qty -= $cart->product_qty;
                 $product->save();
@@ -99,7 +98,7 @@ class CartController extends Controller
             $newTransaction->save();
 
             return back()->with('alert','Transaction success! You will receive our products soon! Thank you for shopping with us!');
-        }else{
+        } else {
             return back()->with('error','Passcode does not match');
         }
     }

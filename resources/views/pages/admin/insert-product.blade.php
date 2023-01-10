@@ -5,7 +5,7 @@
 @section('main-content')
     <h3 id="insert_form_header" class="text-black mb-4">Add New Product</h3>
 
-    <form action="{{ Route('insert-product') }}" id="insert_form" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('insert-product') }}" id="insert_form" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group row d-flex align-items-center mb-0">
             <label for="product_image" class="col-sm-2 col-form-label">Image</label>
@@ -52,7 +52,7 @@
         </div>
         <hr class="gradient-hr my-4">
         
-        @if($errors->any())
+        @if ($errors->any())
             <div class="alert alert-danger mt-4">
                 @error('product_name')
                     <div class="text-danger">{{$message}}</div>

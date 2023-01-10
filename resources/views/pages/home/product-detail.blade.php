@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-{{-- nanti title diganti jadi judul lagu --}}
 @section('title', 'Product Detail')
 
 @section('main-content')
@@ -10,7 +9,7 @@
 		</div>
 
 		<h3 class="text-black text-center">{{$product->product_name}}</h3>
-		<p>{{$product->product_description}}</p>
+		<p class="mt-3">{{$product->product_description}}</p>
 		<p>Stock: {{$product->product_qty}}</p>
 		<p>Category: {{$product->category->category_name}}</p>
 	</div>

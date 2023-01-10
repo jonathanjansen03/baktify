@@ -5,7 +5,7 @@
 @section('main-content')
     <h2 class="text-center text-black font-weight-bold">Sign in to your account</h2>
     <div id="sign_in_form" class="form-group mx-auto gray-shadow rounded-lg p-4 mt-4 mb-5">
-        <form method="POST" action="{{Route('login')}}" >
+        <form method="POST" action="{{ route('login')}}" >
             @csrf
             <div class="form-group">
                 <label for="login_email" class="text-black">Email address</label>

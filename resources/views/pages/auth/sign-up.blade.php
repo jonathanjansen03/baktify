@@ -5,7 +5,7 @@
     <h2 class="text-center text-black font-weight-bold">Create your account</h2>
     
     <div id="sign_up_form" class="form-group mx-auto gray-shadow rounded-lg p-4 mt-4 mb-5">
-        <form action="{{ Route('register') }}" method="GET">
+        <form action="{{ route('register') }}" method="GET">
             <div class="form-group">
                 <label for="sign_up_name" class="text-black">Name</label>
                 <input type="text" name="name" id="sign_up_name" class="form-control">

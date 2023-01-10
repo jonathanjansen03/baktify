@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function viewProfile(){
+    public function viewProfile() {
         return view('pages.auth.user-profile');
     }
 
-    public function viewUpdateProfile(){
+    public function viewUpdateProfile() {
         return view('pages.auth.update-profile');
     }
 
-    public function updateProfile(Request $request){
+    public function updateProfile(Request $request) {
         $request->validate([
             'name' => 'required|max:255',
             'password' => 'required|confirmed|min:8',

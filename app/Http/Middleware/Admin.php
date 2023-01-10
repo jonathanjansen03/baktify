@@ -17,14 +17,14 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()){
-            if(Auth::user()->role=="admin"){
+        if (Auth::check()) {
+            if (Auth::user()->role == "admin") {
                 return $next($request);
             }
-            else{
+            else {
                 return redirect()->back() ->with('alert', 'Only Admin Can Access This Page!');
             }
-        }else{
+        } else {
             return redirect()->back() ->with('alert', 'Only Admin Can Access This Page!');
         }
         

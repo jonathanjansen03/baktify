@@ -17,14 +17,14 @@ class Member
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()){
-            if(Auth::user()->role=="member"){
+        if (Auth::check()) {
+            if (Auth::user()->role =="member") {
                 return $next($request);
             }
-            else{
+            else {
                 return redirect()->back()->with('alert', 'Only User Can Access This Page!');
             }
-        }else{
+        } else {
             return redirect(route('signin'))->with('alert', 'Please Sign In To Proceed');
         }
     }

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Cookie;
 
 class LoginController extends Controller
 {
-    public function index(){
+    public function index() {
         return view('pages.auth.sign-in');
     }
 
@@ -26,10 +26,10 @@ class LoginController extends Controller
             'password' => $request->password
         ];
 
-        if($request->get('remember-email')){
+        if ($request->get('remember-email')) {
             Cookie::queue('emailcookie',$request->email, 2628000); // 5 years = 2628000 minutes
         }
-        if(!Auth::Attempt($credentials)){
+        if (!Auth::Attempt($credentials)) {
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records.'
             ]);

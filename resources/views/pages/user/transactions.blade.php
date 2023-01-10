@@ -3,11 +3,9 @@
 @section('title', 'Transactions')
 
 @section('main-content')
-    {{-- kalo cart empty --}}
-    {{-- <h5 id="empty_cart_message" class="text-black">Your cart is empty.</h5> --}}
-@if(count($transactions)==0)
-    <caption><h5 class="text-black mb-0 ml-5">You don't have any transaction!</h5></caption>
-@else
+    @if (count($transactions) == 0)
+        <caption><h5 class="text-black mb-0 ml-5">You don't have any transaction!</h5></caption>
+    @else
     @foreach ($transactions as $tr)
         <div class="transaction-container">
             <form action="" id="cart_form">
@@ -22,20 +20,18 @@
                             </tr>
                         </thead>
                         @foreach ($tr->carts as $cart)
-                        <tbody>
-                            <tr class="gray-shadow">
-                                <td class="d-flex align-items-center border-0 align-middle">
-                                    <img src="{{ asset('storage/image/'.$cart->product_img) }}" alt="Product image" class="rounded-circle">
-                                    <p class="text-black mb-0 ml-3">{{$cart->product_name}}</p>
-                                </td>
-                                <td class="text-black border-0 align-middle">IDR {{$cart->product_price}}</td>
-                               
-                                <td class="border-0 align-middle"><input type="text" name="qty" id="product_qty" value="{{$cart->product_qty}}" class="text-black w-50"></td>
-                                <td class="text-black border-0 align-middle">IDR {{$cart->product_subtotal}}</td>
-                                {{-- kalo abis update nanti qty nya 0, otomatis delete product dari cart --}}
+                            <tbody>
+                                <tr class="gray-shadow">
+                                    <td class="d-flex align-items-center border-0 align-middle">
+                                        <img src="{{ asset('storage/image/'.$cart->product_img) }}" alt="Product image" class="rounded-circle">
+                                        <p class="text-black mb-0 ml-3">{{$cart->product_name}}</p>
+                                    </td>
+                                    <td class="text-black border-0 align-middle">IDR {{$cart->product_price}}</td>
                                 
-                            </tr>
-                     </tbody>
+                                    <td class="border-0 align-middle"><input type="text" name="qty" id="product_qty" value="{{$cart->product_qty}}" class="text-black w-50"></td>
+                                    <td class="text-black border-0 align-middle">IDR {{$cart->product_subtotal}}</td>
+                                </tr>
+                            </tbody>
                         @endforeach
                     </table>
                 </fieldset>

@@ -8,24 +8,24 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    public function productList(Request $request){
+    public function productList(Request $request) {
         $products = null;
-        if($request->has('product_search')){
+        if ($request->has('product_search')) {
             $products = Product::where('product_description','LIKE','%'.$request->product_search.'%')->orWhere('product_name','LIKE','%'.$request->product_search.'%')->paginate(12);
-            if(count($products)== 0){
+            if (count($products) == 0) {
                 return back()->with('error','No Product Match for '.$request->product_search);
             }
-        }else{
+        } else {
             $products = Product::paginate(12);
         }
         return view('pages.home.product-list', compact('products'));
     }
 
-    public function viewProduct($id){
+    public function viewProduct($id) {
         $product = Product::findOrFail($id);
         return view('pages.home.product-detail', compact('product'));
     }
-    public function createProduct(Request $request){
+    public function createProduct(Request $request) {
         $validator = Validator::make($request->all(), [
             'product_image' => 'required|mimes:jpg,png,jpeg',
         ]);
@@ -59,11 +59,11 @@ class ProductController extends Controller
        // dd($product);
         $product->save();
 
-        return redirect(route('product-list'))->with('alert', 'Product Succesfully Inserted!');
+        return redirect(route('product-list'))->with('alert', 'Product Successfully Inserted!');
         
     }
 
-    public function updateProduct(Request $request, $id){
+    public function updateProduct(Request $request, $id) {
         $validator = Validator::make($request->all(), [
             'product_image' => 'required|mimes:jpg,png,jpeg',
         ]);
@@ -92,10 +92,10 @@ class ProductController extends Controller
        $product->product_price = $request->product_price;
        $product->save();
 
-        return redirect('/products')->with('alert', 'Product Succesfully Updated!');
+        return redirect('/products')->with('alert', 'Product Successfully Updated!');
     }
 
-    public function deleteProduct($id){
+    public function deleteProduct($id) {
         Product::destroy($id);
         return back()->with('alert', 'Success remove product');
     }

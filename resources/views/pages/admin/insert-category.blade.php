@@ -11,7 +11,7 @@
 
     <h3 id="insert_form_header" class="text-black mb-4">Add New Category</h3>
 
-    <form action="{{ Route('insert-category') }}" method="POST" id="insert_form">
+    <form action="{{ route('insert-category') }}" method="POST" id="insert_form">
         @csrf
         <div class="form-group row">
             <label for="product_name" class="col-sm-2 col-form-label">Category Name</label>

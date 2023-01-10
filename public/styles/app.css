@@ -112,11 +112,7 @@ caption {
 #checkout_form,
 #transaction_details,
 .transaction-details-wrapper h5 {
-    margin-left: 5%;
-}
-
-#checkout_form button {
-    width: 28.7%;
+    margin: 0 5%;
 }
 
 .text-danger,

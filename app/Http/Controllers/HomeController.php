@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function viewIndex(){
+    public function viewIndex() {
         return view('pages.home.home');
     }
 
-    public function viewAboutUs(){
+    public function viewAboutUs() {
         return view('pages.home.about-us');
     }
 }
