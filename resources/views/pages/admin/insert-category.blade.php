@@ -25,7 +25,7 @@
 
     @error('category_name')
         <div class="alert alert-danger mt-4">
-            The name field is required.
+           {{$message}}
         </div>
     @enderror
 @endsection

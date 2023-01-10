@@ -38,7 +38,8 @@
         </div>
         
         <hr class="gradient-hr">
-
+        @if($errors->any())
+        <div class="alert alert-danger mt-4">
             @error('product_description')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -51,6 +52,8 @@
             @error('category')
                 <div class="text-danger">Please Create Category First!</div>
             @enderror
+        </div>
+        @endif
 
         <div id="insert_cancel_btns_container">
             <button type="submit" class="btn blue-btn">Update</button>

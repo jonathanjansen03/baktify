@@ -92,7 +92,7 @@ class ProductController extends Controller
        $product->product_price = $request->product_price;
        $product->save();
 
-        return redirect('/products');
+        return redirect('/products')->with('alert', 'Product Succesfully Updated!');
     }
 
     public function deleteProduct($id){

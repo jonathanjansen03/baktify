@@ -23,9 +23,9 @@
     <div id="product_list_container" class="row mt-5">
         @foreach ($products as $product)
         <div class="product-container col-md-3 mb-5">
-            <div class="product-wrapper gray-shadow text-center">
+            <div class="product-wrapper gray-shadow text-center py-3">
                 <div class="product-info" onclick="location.href='{{ route('product-detail', $product->id)}}'">
-                    <img src="{{ asset('storage/image/'.$product->product_img) }}" alt="Product">
+                    <img class="rounded-lg" src="{{ asset('storage/image/'.$product->product_img) }}" alt="Product">
                     <div class="text-black font-weight-bold">{{ $product->product_name }}</div>
                     <div>IDR {{ $product->product_price }}</div>
                     <div class="product-category mx-auto rounded-pill text-white mt-2 py-1">{{ $product->category->category_name }}</div>
